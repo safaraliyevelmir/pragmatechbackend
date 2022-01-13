@@ -1,0 +1,69 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block css %}
+<link rel="stylesheet" href="{% static 'assets/css/group_details.css' %}">
+{% endblock css %}
+
+
+{% block content %}
+      <!-- downmenu -->
+
+      <section class="downmenu">
+        <div class="downmenu__wrapper">
+            <a href="../templates/index.html">
+                <div class="downmenu_wrapper_item">Ana Səhifə</div>
+            </a>
+            <img src="{% static 'assets/img/icons/Vectorright.svg' %}" alt="">
+            <a href="">
+                <div class="downmenu_wrapper_item">Qrupllar</div>
+            </a>
+            <img src="{% static 'assets/img/icons/Vectorright.svg' %}" alt="">
+            <a href="">
+                <div class="downmenu_wrapper_item">Qrup detalları</div>
+            </a>
+        </div>
+    </section>
+
+    <!-- downmenu end -->
+    <!-- program details title -->
+    <div class="group__title">
+      <div class="group__title__content">
+          <div class="group__title__content__text">
+          <h1>Lorem ipsum dolor sit amet, consectetur</h1>
+          <p>Vivamus pretium, massa ac tempor rhoncus, eros eros hendrerit orci, in viverra risus mi a dolor. Etiam consequat, metus nec sodales porttitor, magna risus bibendum dui, semper posuere lectus urna sit amet dui. Phasellus et bibendum eros. </p>
+          <div class="clock"><img src="{% static 'assets/img/icons/clock3.svg' %}" alt="">
+              <p>{{group.education_term_month}} ay / {{group.education_term_hours}} saat</p>
+          </div>
+          <div class="calendar"><img src="{% static 'assets/img/icons/calendar.svg' %}" alt="#">
+              <p>Bazar ertəsi - çümə | 19:00 - 22:00</p>
+          </div>
+      </div>
+          <div class="group__title__content__img"><img src="{% static 'assets/img/style_css_img/comp18.svg' %}" alt="#"></div>
+      </div>
+      
+  </div>
+
+
+  <!-- program details info -->
+
+  <div class="group__info">
+      <div class="group__info__left">
+          <h1>Qrup haqqında məlumat</h1>
+          <p>{{group.programs.information|safe}}</p>
+      </div>
+      <div class="group__info__right">
+          <div class="group__info__right__condition">
+              <h1>Qrupda iştirak etmə şərtləri</h1>
+              {{group.programs.requirements|safe}}
+          </div>
+          <div class="group__info__right__result">
+              <h1>Qrupu bitirən tələbənin əldə edəcəyi nəticələr</h1>
+              {{group.programs.resaults|safe}}
+          </div>
+      </div>
+  </div>
+
+{% endblock content %}
+

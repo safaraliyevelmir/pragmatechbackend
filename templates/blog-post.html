@@ -1,0 +1,90 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block css %}
+<link rel="stylesheet" href="{% static 'assets/css/blog-post.css' %}">
+{% endblock css %}
+
+{% block content %}
+      <!-- downmenu -->
+
+      <section class="downmenu">
+        <div class="downmenu__wrapper">
+            <a href="../templates/index.html">
+                <div class="downmenu_wrapper_item">Ana Səhifə</div>
+            </a>
+            <img src="{% static 'assets/img/icons/Vectorright.svg' %}" alt="">
+            <a href="">
+                <div class="downmenu_wrapper_item">{{title}}</div>
+            </a>
+
+        </div>
+    </section>
+
+    <!-- downmenu end -->
+<!-- blog post start -->
+<div class="head">
+  <div class="blog-post-all">
+    <div class="blog-post-header">
+      <h2>
+        {{blog}}
+      </h2>
+      <p class="blog-post-name">{{blog.title}}</p>
+      <p class="blog-post-time">{{blog.created_at|date:"Y.m.d"}}</p>
+      <div class="blog-logo-all">
+        <a href="#">
+          <div class="share-logo"><i class="fas fa-share-alt"></i></div>
+        </a>
+        <a href="#">
+          <div class="facebook-logo"><i class="fab fa-facebook-f"></i></div>
+        </a>
+        <a href="#">
+          <div class="instagram-logo"><i class="fab fa-instagram"></i></div>
+        </a>
+        <a href="#">
+          <div class="linkedin-logo"><i class="fab fa-linkedin-in"></i></div>
+        </a>
+      </div>
+      <div class="blog-post-img" style="background-image: url({{blog.image.url}});"></div>
+      <div class="blog-post-text">
+        <p>
+          {{blog.content|safe}}
+        </p>
+      </div>
+    </div>
+    <!-- blog post end -->
+
+    <!-- other blog start -->
+  </div>
+  <div class="other-blog">
+    <div class="other-blog-header">
+      <p>Digər bloqlar</p>
+    </div>
+    <div class="other-blog-line"></div>
+  </div>
+  <!-- other blog end -->
+
+  <!-- blog-box start-->
+
+  <div class="blog-box">
+
+
+    {% for blog in blogs %}
+    <div class="box">
+      <div class="box-img" style="background:url({{blog.image.url}})"></div>
+      <div class="box-text">
+        <p class="box-text-p">{{blog.title}}</p>
+        <p style="margin-bottom: 6px;">{{blog.author}}</p>
+        <p class="box-text-p2">{{blog.created_at|date:"d.m.Y"}}</p>
+        <a href="{{blog.get_absolute_url}}" class="buttons">Ətraflı oxu</a>
+      </div>
+    </div>
+    {% endfor %}
+
+
+  </div>
+
+
+  <!-- blog-box end -->
+</div>
+{% endblock content %}

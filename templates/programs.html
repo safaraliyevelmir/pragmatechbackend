@@ -1,0 +1,76 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block css %}
+<link rel="stylesheet" href="{% static 'assets/css/programs.css' %}">
+{% endblock css %}
+
+
+
+
+{% block content %}
+<!-- downmenu -->
+
+<section class="downmenu">
+    <div class="downmenu__wrapper">
+        <a href="../templates/index.html">
+            <div class="downmenu_wrapper_item">Ana Səhifə</div>
+        </a>
+        <img src="{% static 'assets/img/icons/Vectorright.svg' %}" alt="">
+        <a href="">
+            <div class="downmenu_wrapper_item">Proqramlar</div>
+        </a>
+
+    </div>
+</section>
+
+<!-- downmenu end -->
+<!-- programs -->
+<section class="programs">
+    <div class="programs__left">
+        <div class="programs__left__wrapper">
+            <div class="programs__left__wrapper__up">
+                <h1>Proqramlar</h1>
+                <div class="programs__left__wrapper__up__stroke"></div>
+
+            </div>
+            <div class="programs__left__wrapper__text">Vivamus pretium, massa ac tempor rhoncus, eros eros hendrerit
+                orci, in viverra risus mi a dolor. Etiam consequat, metus nec sodales porttitor, magna risus
+                bibendum dui, semper posuere lectus urna sit amet dui. Phasellus et bibendum eros. </div>
+
+        </div>
+    </div>
+    <div class="programs__img"><img src="{% static 'assets/img/style_css_img/comp18.svg' %}" alt=""></div>
+</section>
+
+<!-- tabsection -->
+<div class="tabs">
+    <div class="double">
+        <div class="double__main">
+
+            <!-- activ programs tab -->
+            <div class="double__main__box main__active">
+
+                {% for program in programs %}
+                <div class="double__main__box__item lastitem">
+                    <img src="{{program.image.url}}" alt="">
+                    <h3>{{program.title}}</h3>
+                    <div class="calendar"><img src="{% static 'assets/img/icons/calendar.svg' %}" alt="">
+                        <p>{{program.date|date:"m.d.Y"}}</p>
+                    </div>
+                    <a href="{{program.get_absolute_url}}" class="detail">
+                        <h4>Daha ətraflı</h4><i class="fas fa-chevron-right"></i>
+                    </a>
+                </div>
+                {% endfor %}
+
+            </div>
+
+
+
+        </div>
+
+
+    </div>
+</div>
+{% endblock content %}

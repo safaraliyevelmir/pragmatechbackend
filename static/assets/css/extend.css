@@ -1,0 +1,318 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+
+body {
+  line-height: 1;
+}
+
+ol, ul {
+  list-style: none;
+}
+
+blockquote, q {
+  quotes: none;
+}
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: '';
+  content: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+@-webkit-keyframes load {
+  0% {
+    left: 0;
+    height: 30px;
+    width: 15px;
+  }
+  50% {
+    height: 8px;
+    width: 40px;
+  }
+  100% {
+    left: 235px;
+    height: 30px;
+    width: 15px;
+  }
+}
+
+@keyframes load {
+  0% {
+    left: 0;
+    height: 30px;
+    width: 15px;
+  }
+  50% {
+    height: 8px;
+    width: 40px;
+  }
+  100% {
+    left: 235px;
+    height: 30px;
+    width: 15px;
+  }
+}
+
+.btn1 {
+  text-decoration: none;
+  position: absolute;
+  right: 0;
+  top: 30%;
+  width: 8.063rem;
+  height: 2.5rem;
+  border-radius: 20px;
+  border: 1px solid #41E063;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+  font-style: bold;
+  font-weight: 700;
+  color: #41E063;
+  font-size: 0.938rem;
+  line-height: 1.156rem;
+}
+
+.btn1:hover {
+  background-color: #41E063;
+  color: white;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+}
+
+@media only screen and (max-device-width: 990px) {
+  .btn1 {
+    display: none;
+  }
+}
+
+@-webkit-keyframes anima {
+  0% {
+    -webkit-transform: scale(0.4);
+            transform: scale(0.4);
+    opacity: 0;
+  }
+  100% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+}
+
+@keyframes anima {
+  0% {
+    -webkit-transform: scale(0.4);
+            transform: scale(0.4);
+    opacity: 0;
+  }
+  100% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+}
+
+@-webkit-keyframes animareduce {
+  0% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+  100% {
+    -webkit-transform: scale(0.4);
+            transform: scale(0.4);
+    opacity: 0;
+  }
+}
+
+@keyframes animareduce {
+  0% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+  100% {
+    -webkit-transform: scale(0.4);
+            transform: scale(0.4);
+    opacity: 0;
+  }
+}
+
+.dropdown .select {
+  cursor: pointer;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 100%;
+}
+
+.dropdown .select .label {
+  margin-left: 1.375rem;
+  display: block;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 1rem;
+  line-height: 1.231rem;
+  color: #ABABAB;
+}
+
+.dropdown .select > img {
+  font-size: 13px;
+  color: #888;
+  cursor: pointer;
+  -webkit-transition: all .3s ease-in-out;
+  transition: all .3s ease-in-out;
+  line-height: 20px;
+  margin-right: 1rem;
+}
+
+.dropdown:active {
+  background-color: #f8f8f8;
+}
+
+.dropdown.active:hover,
+.dropdown.active {
+  -webkit-box-shadow: 0 0 4px #cccccc;
+          box-shadow: 0 0 4px #cccccc;
+  border-radius: 2px 2px 0 0;
+  background-color: #f8f8f8;
+}
+
+.dropdown.active .select > img {
+  -webkit-transform: rotate(180deg);
+          transform: rotate(180deg);
+  -webkit-transition: all .3s ease-in-out;
+  transition: all .3s ease-in-out;
+}
+
+.dropdown .dropdown-menu {
+  position: absolute;
+  background-color: #fff;
+  width: 100%;
+  left: 0;
+  margin-top: 1px;
+  -webkit-box-shadow: 0 1px 2px #cccccc;
+          box-shadow: 0 1px 2px #cccccc;
+  border-radius: 0 1px 2px 2px;
+  overflow: hidden;
+  display: none;
+  max-height: 144px;
+  overflow-y: auto;
+  z-index: 9;
+}
+
+.dropdown .dropdown-menu li {
+  padding: 10px;
+  -webkit-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+  cursor: pointer;
+}
+
+.dropdown .dropdown-menu li:hover {
+  background-color: #F5F5F5;
+  -webkit-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+}
+
+.dropdown .dropdown-menu {
+  padding: 0;
+  list-style: none;
+}
+
+.popupanimation {
+  -webkit-animation: popupanima 0.2s linear;
+          animation: popupanima 0.2s linear;
+}
+
+@-webkit-keyframes popupanima {
+  0% {
+    -webkit-transform: translateX(40%) scale(0.4);
+            transform: translateX(40%) scale(0.4);
+  }
+  100% {
+    -webkit-transform: translateX(0%) scale(1);
+            transform: translateX(0%) scale(1);
+  }
+}
+
+@keyframes popupanima {
+  0% {
+    -webkit-transform: translateX(40%) scale(0.4);
+            transform: translateX(40%) scale(0.4);
+  }
+  100% {
+    -webkit-transform: translateX(0%) scale(1);
+            transform: translateX(0%) scale(1);
+  }
+}
+
+.popuphidden {
+  -webkit-animation: popuphidden 0.2s linear;
+          animation: popuphidden 0.2s linear;
+}
+
+@-webkit-keyframes popuphidden {
+  0% {
+    -webkit-transform: translateX(0%) scale(1);
+            transform: translateX(0%) scale(1);
+  }
+  100% {
+    -webkit-transform: translateX(40%) scale(0.4);
+            transform: translateX(40%) scale(0.4);
+  }
+}
+
+@keyframes popuphidden {
+  0% {
+    -webkit-transform: translateX(0%) scale(1);
+            transform: translateX(0%) scale(1);
+  }
+  100% {
+    -webkit-transform: translateX(40%) scale(0.4);
+            transform: translateX(40%) scale(0.4);
+  }
+}

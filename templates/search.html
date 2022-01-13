@@ -1,0 +1,55 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block css %}
+<link rel="stylesheet" href="{% static 'assets/css/blog.css' %}">
+{% endblock css %}
+
+
+{% block content %}
+<!-- downmenu -->
+<section class="downmenu">
+    <div class="downmenu__wrapper">
+        <a href="">
+            <div class="downmenu__wrapper__item">Ana Səhifə</div>
+        </a>
+        <img src="{% static 'assets/img/icons/Vectorright.svg' %}" alt="#">
+        <a href="">
+            <div class="downmenu__wrapper__item">Bloq</div>
+        </a>
+    </div>
+</section>
+<div class="head">
+    <div class="blog-all">
+        <div class="blog-header">
+            <div class="line"></div>
+            <h1 class="blog-text">Bloq</h1>
+            <div class="line"></div>
+        </div>
+    </div>
+    <!-- blog photo and text -->
+    <!-- blog end -->
+
+    <!-- blog-box -->
+
+    <h1 style="text-align: center; font-size:20px; margin-top:20px;">Search: {{searched}}</h1>
+
+    <div class="blog-box">
+
+
+         {% for blog in blog %}
+        <div class="box">
+            <div class="box-img" style="background:url({{blog.image.url}})"></div>
+            <div class="box-text">
+                <p class="box-text-p">{{blog.title}}</p>
+                <p style="margin-bottom: 6px;">{{blog.author}}</p>
+                <p class="box-text-p2">{{blog.created_at |date:"Y.m.d"}}</p>
+                <a href="{{blog.get_absolute_url}}" class="buttons">Ətraflı oxu</a>
+            </div>
+        </div>
+        {% endfor %}
+
+
+    </div>
+
+</div>
+{% endblock content %}

@@ -1,0 +1,120 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block css %}
+<link rel="stylesheet" href="{% static 'assets/css/contact.css' %}">
+{% endblock css %}
+
+{% block content %}
+      <!-- downmenu -->
+
+      <section class="downmenu">
+        <div class="downmenu__wrapper">
+            <a href="../templates/index.html">
+                <div class="downmenu_wrapper_item">Ana Səhifə</div>
+            </a>
+            <img src="{% static 'assets/img/icons/Vectorright.svg' %}" alt="">
+            <a href="">
+                <div class="downmenu_wrapper_item">Əlaqə</div>
+            </a>
+
+        </div>
+    </section>
+
+    <!-- downmenu end -->
+<div class="head">
+
+  <!-- contact start-->
+
+  <div class="contact-all">
+    <div class="contact-header">
+      <div class="line"></div>
+      <h1 class="contact-text">Bizimlə əlaqə</h1>
+      <div class="line"></div>
+    </div>
+  </div>
+  <div class="contact-map-info">
+    <div class="contact-map"><iframe
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3038.0533426308043!2d49.845490350333655!3d40.407669064014385!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x403087f5efc1f421%3A0x8d1989f4a7f62f9c!2sAvesta%20Concern%2C%20Baku%2C%20Azerbaijan!5e0!3m2!1sen!2s!4v1638930366959!5m2!1sen!2s"
+        width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe></div>
+    <div class="contact-info">
+      <div>
+        <div class="contact-info-location"></div>
+        <div class="contact-info-text">
+          <p>Xocalı prospekti 40</p>
+        </div>
+      </div>
+      <div>
+        <div class="contact-info-number"></div>
+        <div class="contact-info-text">
+          <p>+ 994 (50) 256 08 07</p>
+        </div>
+      </div>
+      <div>
+        <div class="contact-info-mail"></div>
+        <div class="contact-info-text">
+          <p>info@pragmatech.com</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- contact end -->
+
+  <!-- sendbox start -->
+
+  <div class="sendbox-all">
+    <form class="contact-sendbox" method="post" >
+      {% csrf_token %}
+      <h1>Bizə yazın</h1>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit</p>
+      <div class="sendbox-line"></div>
+      <div class="sendbox-inputs">
+        <div class="sendbox__name">
+          <!-- <input required type="text" placeholder="Ad"> -->
+          {{form.name}}
+          <span class="bg__border"></span><span
+            class="bg__border"></span><span class="bg__border"></span><span class="bg__border"></span></div>
+        <div class="sendbox__surname">
+          <!-- <input required type="text" placeholder="Soyad"> -->
+          {{form.surname}}
+          <span
+            class="bg__border"></span><span class="bg__border"></span><span class="bg__border"></span><span
+            class="bg__border"></span></div>
+      </div>
+      <div class="sendbox-inputs">
+        <div class="sendbox__email">
+          <!-- <input required type="email" placeholder="Email"> -->
+          {{form.email}}
+          <span
+            class="bg__border"></span><span class="bg__border"></span><span class="bg__border"></span><span
+            class="bg__border"></span></div>
+        <div class="sendbox__number">
+          <!-- <input required type="tel" placeholder="Telefon"> -->
+          {{form.phone_number}}
+          <span
+            class="bg__border"></span><span class="bg__border"></span><span class="bg__border"></span><span
+            class="bg__border"></span></div>
+        <div class="label"><img src="{% static 'assets/img/icons/icon.svg' %}" alt="icon">text@example.com</div>
+      </div>
+      <div class="sendbox-textarea">
+        <!-- <textarea required placeholder="Mesajınız" class="textbox-input" name="" id="" cols="30"
+          rows="10"></textarea> -->
+          {{form.message}}
+          <span class="bg__border"></span><span class="bg__border"></span><span
+          class="bg__border"></span><span class="bg__border"></span>
+      </div>
+      <div class="sendbox-submit">
+        <input type="submit" value="Göndər">
+      </div>
+    </form>
+  </div>
+
+  <!-- sendbox end -->
+
+</div>
+{% endblock content %}
+
+{% block js %}
+<script src="{% static 'assets/js/contact_form.js' %}"></script>
+{% endblock js %}

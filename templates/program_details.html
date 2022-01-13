@@ -1,0 +1,64 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block css %}
+<link rel="stylesheet" href="{% static 'assets/css/program_details.css' %}">
+{% endblock css %}
+
+
+{% block content %}
+      <!-- downmenu -->
+
+      <section class="downmenu">
+        <div class="downmenu__wrapper">
+            <a href="../templates/index.html">
+                <div class="downmenu_wrapper_item">Ana Səhifə</div>
+            </a>
+            <img src="{% static 'assets/img/icons/Vectorright.svg' %}" alt="">
+            <a href="">
+                <div class="downmenu_wrapper_item">Proqramlar</div>
+            </a>
+
+            <img src="{% static 'assets/img/icons/Vectorright.svg' %}" alt="">
+            <a href="">
+                <div class="downmenu_wrapper_item">Proqramın detalları</div>
+            </a>
+        </div>
+    </section>
+
+    <!-- downmenu end -->
+<!-- program details title -->
+<div class="program__title">
+  <div class="program__title__content">
+    <div class="program__title__content__text">
+      <h1>Lorem ipsum dolor sit amet, consectetur</h1>
+      <p>Vivamus pretium, massa ac tempor rhoncus, eros eros hendrerit orci, in viverra risus mi a dolor. Etiam
+        consequat, metus nec sodales porttitor, magna risus bibendum dui, semper posuere lectus urna sit amet dui.
+        Phasellus et bibendum eros. </p>
+
+    </div>
+    <div class="program__title__content__img"><img src="{% static 'assets/img/style_css_img/comp18.svg' %}" alt="#"></div>
+  </div>
+
+</div>
+
+
+<!-- program details info -->
+
+<div class="program__info">
+  <div class="program__info__left">
+    <h1>Qrup haqqında məlumat</h1>
+    <p>{{program.information|safe}}</p>
+  </div>
+  <div class="program__info__right">
+    <div class="program__info__right__condition">
+      <h1>Qrupda iştirak etmə şərtləri</h1>
+      {{program.requirements|safe}}
+    </div>
+    <div class="program__info__right__result">
+      <h1>Qrupu bitirən tələbənin əldə edəcəyi nəticələr</h1>
+      {{program.resaults|safe}}
+    </div>
+  </div>
+</div>
+
+{% endblock content %}
