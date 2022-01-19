@@ -14,7 +14,8 @@ class MainPageView(TemplateView):
         context = super().get_context_data(**kwargs)
         context["groups"] = Group.objects.all() 
         context["planned_groups"] = Group.objects.filter(is_planned=True).all()
-        context["blogs"] = Blogs.objects.all()
+        context["blogs"] = Blog.objects.all()[:4]
+        context["main_blog"] = Blog.objects.filter(main_page_post=True).first()
         return context
     
 

@@ -267,22 +267,22 @@
           <!-- bu div bos qalacaq -->
         </div>
         <div class="box box-small">
-          <div class="box-img" style="background: url(../assets/img/style_css_img/comp13.svg);"></div>
+          <div class="box-img" style="background: url({{main_blog.image.url}});"></div>
           <div class="box-text">
-            <p class="box-text-p">Lorem ipsum dolor sit amet, consectetur</p>
-            <p style="margin-bottom: 6px;">Samir Kərimov</p>
-            <p class="box-text-p2">02.09.2021</p>
-            <a href="./blog-post.html" class="buttons">Ətraflı oxu</a>
+            <p class="box-text-p">{{main_blog.title}}</p>
+            <p style="margin-bottom: 6px;">{{main_blog.author}}</p>
+            <p class="box-text-p2">{{main_blog.date|date:"m.d.Y"}}</p>
+            <a href="{{main_blog.get_absolute_url}}" class="buttons">Ətraflı oxu</a>
           </div>
         </div>
         {% for blog in blogs %}
         <div class="box box-big ">
           <div class="box-img" style="background: url(../assets/img/style_css_img/comp14.svg);"></div>
           <div class="box-text">
-            <p class="box-text-p">Lorem ipsum dolor sit amet, consectetur</p>
-            <p style="margin-bottom: 6px;">Samir Kərimov</p>
-            <p class="box-text-p2">02.09.2021</p>
-            <a href="./blog-post.html" class="buttons">Ətraflı oxu</a>
+            <p class="box-text-p">{{blog.title}}</p>
+            <p style="margin-bottom: 6px;">{{blog.author}}</p>
+            <p class="box-text-p2">{{blog.created_at|date:"m.d.Y"}}</p>
+            <a href="{{blog.get_absolute_url}}" class="buttons">Ətraflı oxu</a>
           </div>
         </div>
         {% endfor %}
@@ -305,7 +305,7 @@
   <!-- sectionhelp -->
   <section class="help">
     <div class="help__question">
-      <img src="../assets/img/style_css_img/vector2.svg" alt="">
+      <img src="{% static 'assets/img/style_css_img/vector2.svg' %}" alt="">
       <div class="help__question__up">sualınız var?</div>
       <div class="help__question__down">
         <div class="help__question__down__stroke"></div>
