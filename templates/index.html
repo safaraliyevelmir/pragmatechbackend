@@ -1,4 +1,5 @@
 {% load static %}
+{% load program %}
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -8,10 +9,10 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
   <!-- swiper -->
-  <link rel="stylesheet" href="../assets/vendor/swiper-bundle.min.css">
+  <link rel="stylesheet" href="{% static 'assets/vendor/swiper-bundle.min.css' %}">
   <!-- slickcarousel -->
-  <link rel="stylesheet" href="../assets/vendor/slick.css">
-  <link rel="stylesheet" href="../assets/vendor/slick-theme.css">
+  <link rel="stylesheet" href="{% static 'assets/vendor/slick.css' %}">
+  <link rel="stylesheet" href="{% static 'assets/vendor/slick-theme.css' %}">
   <!-- fontawesome -->
   <script src="https://kit.fontawesome.com/3113ae62d0.js" crossorigin="anonymous"></script>
 
@@ -29,29 +30,33 @@
   <!-- header -->
   <header>
     <nav class="navbar">
-      <a href="./index.html">
-        <div class="logo"><img src="../assets/img/icons/logo.svg" alt="pragmatech"></div>
+      <a href="{% url 'index' %}">
+        <div class="logo"><img src="{% static 'assets/img/icons/logo.svg' %}" alt="pragmatech"></div>
       </a>
-      <a href="./index.html">
-        <div class="logoblack"><img src="../assets/img/icons/logoblack.svg" alt="pragmatech"></div>
+      <a href="{% url 'index' %}">
+        <div class="logoblack"><img src="{% static 'assets/img/icons/logoblack.svg' %}" alt="pragmatech"></div>
       </a>
       <div class="menu">
         <ul>
-          <li><a href="./about.html">Haqqımızda</a> <span></span> </li>
-          <li><a href="./programs.html">Proqramlar</a> <span></span> </li>
-          <li><a href="./groups.html">Qruplar</a> <span></span> </li>
-          <li><a href="./blog.html">Bloq</a> <span></span> </li>
-          <li><a href="./contact.html">Əlaqə</a> <span></span> </li>
+          <li><a href="{% url 'about' %}">Haqqımızda</a> <span></span> </li>
+          <li><a href="{% url 'programs' %}">Proqramlar</a> <span></span> </li>
+          <li><a href="{% url 'group' %}">Qruplar</a> <span></span> </li>
+          <li><a href="{% url 'blog' %}">Bloq</a> <span></span> </li>
+          <li><a href="{% url 'contact' %}">Əlaqə</a> <span></span> </li>
         </ul>
       </div>
-      <div class="burger"><img src="../assets/img/icons/burger.svg" alt=""></div>
+      <div class="burger"><img src="{% static 'assets/img/icons/burger.svg' %}" alt=""></div>
 
       <div class="wrapper">
         <div class="search-box">
-          <input type="text" placeholder="Axtar" class="input">
-          <div class="btn">
-            <i class="fa fa-search" aria-hidden="true"></i>
-          </div>
+          <form action="{% url 'search' %}" method="POST">
+            {% csrf_token %}
+             <input type="text" placeholder="Axtar" name="searched"  class="input">
+            <input type="submit" style="display: none;">
+            <div class="btn">
+                <i class="fa fa-search" aria-hidden="true"></i>
+            </div>
+        </form>
         </div>
       </div>
       <a class="btn1" href="#">MÜRACİƏT</a>
@@ -63,22 +68,22 @@
 
   <div class="mobile__navbar">
     <div class="mobile__navbar__header">
-      <a href="./index.html"> <img src="../assets/img/icons/logoblack.svg" alt=""></a>
-      <img class="x__icon" src="../assets/img/icons/x.svg" alt="">
+      <a href="{% url 'index' %}"> <img src="{% static 'assets/img/icons/logoblack.svg' %}" alt=""></a>
+      <img class="x__icon" src="{% static 'assets/img/icons/x.svg' %}" alt="">
     </div>
     <div class="mobile__navbar__search">
       <div class="btn">
-        <img src="../assets/img/icons/search.svg" alt="">
+        <img src="{% static 'assets/img/icons/search.svg' %}" alt="">
       </div>
       <input placeholder="Axtarış" type="search">
     </div>
     <div class="mobile__navbar__menu">
       <ul>
-        <li><a href="./about.html">Haqqımızda</a> <span></span> </li>
-        <li><a href="./programs.html">Proqramlar</a> <span></span> </li>
-        <li><a href="./groups.html">Qruplar</a> <span></span> </li>
-        <li><a href="./blog.html">Bloq</a> <span></span> </li>
-        <li><a href="./contact.html">Əlaqə</a> <span></span> </li>
+        <li><a href="{% url 'about' %}">Haqqımızda</a> <span></span> </li>
+        <li><a href="{% url 'programs' %}">Proqramlar</a> <span></span> </li>
+        <li><a href="{% url 'group' %}">Qruplar</a> <span></span> </li>
+        <li><a href="{% url 'blog' %}">Bloq</a> <span></span> </li>
+        <li><a href="{% url 'contact' %}">Əlaqə</a> <span></span> </li>
       </ul>
     </div>
     <a class="btn1" href="#">MÜRACİƏT</a>
@@ -107,7 +112,7 @@
             <a href="#">Daha ətraflı</a>
           </div>
         </div>
-        <img src="../assets/img/style_css_img/Background.svg" alt="proqramist">
+        <img src="{% static 'assets/img/style_css_img/Background.svg' %}" alt="proqramist">
       </div>
       <div class="swiper-slide">
         <div class="header-wrapper">
@@ -119,7 +124,7 @@
             <a href="#">Daha ətraflı</a>
           </div>
         </div>
-        <img src="../assets/img/style_css_img/programist.png" alt="proqramist">
+        <img src="{% static 'assets/img/style_css_img/programist.png' %}" alt="proqramist">
 
       </div>
       <div class="swiper-slide">
@@ -132,7 +137,7 @@
             <a href="#">Daha ətraflı</a>
           </div>
         </div>
-        <img src="../assets/img/style_css_img/futureprogramming.png" alt="proqramist">
+        <img src="{% static 'assets/img/style_css_img/futureprogramming.png' %}" alt="proqramist">
       </div>
 
     </div>
@@ -141,12 +146,12 @@
   <!-- logosection -->
   <section class="section-logo">
     <div class="logos">
-      <div class="logos__item"><img src="../assets/img/style_css_img/html.svg" alt="html"></div>
-      <div class="logos__item"><img class="css" src="../assets/img/style_css_img/css.png" alt="css"></div>
-      <div class="logos__item"><img src="../assets/img/style_css_img/js.svg" alt="javascript"></div>
-      <div class="logos__item"><img src="../assets/img/style_css_img/c.svg" alt="c"></div>
-      <div class="logos__item"><img src="../assets/img/style_css_img/react.jpg" class="react" alt="react"></div>
-      <div class="logos__item"><img src="../assets/img/style_css_img/python.svg" alt="python"></div>
+      <div class="logos__item"><img src="{% static 'assets/img/style_css_img/html.svg' %}" alt="html"></div>
+      <div class="logos__item"><img class="css" src="{% static 'assets/img/style_css_img/css.png' %}" alt="css"></div>
+      <div class="logos__item"><img src="{% static 'assets/img/style_css_img/js.svg' %}" alt="javascript"></div>
+      <div class="logos__item"><img src="{% static 'assets/img/style_css_img/c.svg' %}" alt="c"></div>
+      <div class="logos__item"><img src="{% static 'assets/img/style_css_img/react.jpg' %}" class="react" alt="react"></div>
+      <div class="logos__item"><img src="{% static 'assets/img/style_css_img/python.svg' %}" alt="python"></div>
     </div>
   </section>
 
@@ -163,9 +168,9 @@
         <div class="active__groups__main__groups">qruplar</div>
         <p>Lorem ipsum dolor sit amet,
           consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit</p>
-        <a href="./programs.html">Hamısına bax</a>
+        <a href="{% url 'programs' %}">Hamısına bax</a>
       </div>
-      <a class="btn__bottom" href="./programs.html">Hamısına bax</a>
+      <a class="btn__bottom" href="{% url 'programs' %}">Hamısına bax</a>
     </div>
     <div class="active__groups__container">
       <div class="active__groups__item__wrapper responsive">
@@ -173,48 +178,16 @@
           <!-- bu div bos qalacaq -->
 
         </div>
-        <div class="active__groups__item"><a href="#">
-            <img src="../assets/img/style_css_img/comp.svg" alt="#">
-            <h3>Lorem ipsum dolor sit</h3>
-            <p>6 ay / 200 saat</p>
 
-          </a></div>
+        {% for group in groups %}
         <div class="active__groups__item"><a href="#">
-            <img src="../assets/img/style_css_img/comp2.svg" alt="#">
-            <h3>Lorem ipsum dolor sit</h3>
-            <p>6 ay / 200 saat</p>
+          <img src="{{group.image.url}}" alt="#">
+          <h3>{{group.title}}</h3>
+          <p>{{group.education_term_month}} ay / {{group.education_term_hours}} saat</p>
 
-          </a></div>
-        <div class="active__groups__item"><a href="#">
-            <img src="../assets/img/style_css_img/comp3.svg" alt="#">
-            <h3>Lorem ipsum dolor sit</h3>
-            <p>6 ay / 200 saat</p>
-
-          </a></div>
-        <div class="active__groups__item"><a href="#">
-            <img src="../assets/img/style_css_img/comp4.svg" alt="#">
-            <h3>Lorem ipsum dolor sit</h3>
-            <p>6 ay / 200 saat</p>
-
-          </a></div>
-        <div class="active__groups__item"><a href="#">
-            <img src="../assets/img/style_css_img/comp5.svg" alt="#">
-            <h3>Lorem ipsum dolor sit</h3>
-            <p>6 ay / 200 saat</p>
-
-          </a></div>
-        <div class="active__groups__item"><a href="#">
-            <img src="../assets/img/style_css_img/comp6.svg" alt="#">
-            <h3>Lorem ipsum dolor sit</h3>
-            <p>6 ay / 200 saat</p>
-
-          </a></div>
-        <div class="active__groups__item"><a href="#">
-            <img src="../assets/img/style_css_img/comp7.svg" alt="#">
-            <h3>Lorem ipsum dolor sit</h3>
-            <p>6 ay / 200 saat</p>
-
-          </a></div>
+        </a></div>
+        {% endfor %}
+       
 
       </div>
     </div>
@@ -243,65 +216,22 @@
           <!-- bu div bos qalacaq -->
         </div>
 
+        {% for group  in planned_groups %}
         <div class="double__main__box__item">
-          <img src="../assets/img/style_css_img/comp8.svg" alt="#">
+          <img src="{{group.image.url}}" alt="#">
           <h3>Lorem ipsum dolor sit amet,
             consectetur</h3>
-          <div class="calendar"><img src="../assets/img/icons/calendar.svg" alt="#">
-            <p>09.09.2021</p>
+          <div class="calendar"><img src="{%  static 'assets/img/icons/calendar.svg' %}" alt="#">
+            <p>{{group.date|date:"m.d.Y"}}</p>
           </div>
           <a href="#" class="detail">
             <h4>Daha ətraflı</h4><i class="fas fa-chevron-right"></i>
           </a>
         </div>
+        {% endfor %}
 
-        <div class="double__main__box__item">
-          <img src="../assets/img/style_css_img/comp9.svg" alt="">
-          <h3>Lorem ipsum dolor sit amet,
-            consectetur</h3>
-          <div class="calendar"><img src="../assets/img/icons/calendar.svg" alt="#">
-            <p>09.09.2021</p>
-          </div>
-          <a href="#" class="detail">
-            <h4>Daha ətraflı</h4><i class="fas fa-chevron-right"></i>
-          </a>
-        </div>
 
-        <div class="double__main__box__item">
-          <img src="../assets/img/style_css_img/comp10.svg" alt="">
-          <h3>Lorem ipsum dolor sit amet,
-            consectetur</h3>
-          <div class="calendar"><img src="../assets/img/icons/calendar.svg" alt="#">
-            <p>09.09.2021</p>
-          </div>
-          <a href="#" class="detail">
-            <h4>Daha ətraflı</h4><i class="fas fa-chevron-right"></i>
-          </a>
-        </div>
-
-        <div class="double__main__box__item">
-          <img src="../assets/img/style_css_img/comp11.svg" alt="">
-          <h3>Lorem ipsum dolor sit amet,
-            consectetur</h3>
-          <div class="calendar"><img src="../assets/img/icons/calendar.svg" alt="#">
-            <p>09.09.2021</p>
-          </div>
-          <a href="#" class="detail">
-            <h4>Daha ətraflı</h4><i class="fas fa-chevron-right"></i>
-          </a>
-        </div>
-
-        <div class="double__main__box__item">
-          <img src="../assets/img/style_css_img/comp12.svg" alt="">
-          <h3>Lorem ipsum dolor sit amet,
-            consectetur</h3>
-          <div class="calendar"><img src="../assets/img/icons/calendar.svg" alt="#">
-            <p>09.09.2021</p>
-          </div>
-          <a href="#" class="detail">
-            <h4>Daha ətraflı</h4><i class="fas fa-chevron-right"></i>
-          </a>
-        </div>
+   
 
 
       </div>
@@ -345,7 +275,7 @@
             <a href="./blog-post.html" class="buttons">Ətraflı oxu</a>
           </div>
         </div>
-
+        {% for blog in blogs %}
         <div class="box box-big ">
           <div class="box-img" style="background: url(../assets/img/style_css_img/comp14.svg);"></div>
           <div class="box-text">
@@ -355,34 +285,9 @@
             <a href="./blog-post.html" class="buttons">Ətraflı oxu</a>
           </div>
         </div>
-        <div class="box box-big">
-          <div class="box-img" style="background: url(../assets/img/style_css_img/comp15.svg);"></div>
-          <div class="box-text">
-            <p class="box-text-p">Lorem ipsum dolor sit amet, consectetur</p>
-            <p style="margin-bottom: 6px;">Samir Kərimov</p>
-            <p class="box-text-p2">02.09.2021</p>
-            <a href="./blog-post.html" class="buttons">Ətraflı oxu</a>
-          </div>
-        </div>
-        <div class="box box-big">
-          <div class="box-img" style="background: url(../assets/img/style_css_img/comp16.svg);"></div>
-          <div class="box-text">
-            <p class="box-text-p">Lorem ipsum dolor sit amet, consectetur</p>
-            <p style="margin-bottom: 6px;">Samir Kərimov</p>
-            <p class="box-text-p2">02.09.2021</p>
-            <a href="./blog-post.html" class="buttons">Ətraflı oxu</a>
-          </div>
-        </div>
-        <div class="box box-big">
-          <div class="box-img" style="background: url(../assets/img/style_css_img/comp17.svg);"></div>
-          <div class="box-text">
-            <p class="box-text-p">Lorem ipsum dolor sit amet, consectetur</p>
-            <p style="margin-bottom: 6px;">Samir Kərimov</p>
-            <p class="box-text-p2">02.09.2021</p>
-            <a href="./blog-post.html" class="buttons">Ətraflı oxu</a>
-          </div>
-        </div>
-        <a class="green__box__link item__disabled" href="./blog.html">
+        {% endfor %}
+
+        <a class="green__box__link item__disabled" href="{% url 'blog' %}">
           <div class="green__box">
             <h4>bütün</h4>
             <div class="blog__posts__main__up__blog ml">bloq</div>
@@ -439,10 +344,10 @@
           </div>
           <input type="hidden" name="program">
           <ul class="dropdown-menu">
-            <li>HTML</li>
-            <li>Css</li>
-            <li>Javascript</li>
-            <li>C#</li>
+            {% dropdown_data as datas %}
+            {% for data in datas %}
+            <li data-id="{{data.id}}">{{data.title}}</li>
+            {% endfor %}
 
           </ul>
         </div>
@@ -458,51 +363,41 @@
   <!-- popup -->
   <div class="popup__all">
 
-    <form class="popup">
+    <form method="post" class="popup" action="{% url 'apply_course' %}">
+      {% csrf_token %}
       <div class="header">
         <a href="./index.html"> <img src="../assets/img/icons/logoblack.svg" alt=""></a>
         <img class="x__icon" src="../assets/img/icons/x.svg" alt="">
       </div>
-      <h1>Bizə yazın</h1>
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit</p>
-
-      <div class="popup-inputs popup-input-up">
-        <div class="name__field"><input required type="text" placeholder="Ad"><span class="bg__border"></span><span
-            class="bg__border"></span><span class="bg__border"></span><span class="bg__border"></span></div>
-        <div class="surname__field"><input required type="text" placeholder="Soyad"><span
-            class="bg__border"></span><span class="bg__border"></span><span class="bg__border"></span><span
-            class="bg__border"></span></div>
+     <h1>Bizə yazın</h1>
+     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit</p>
+     
+     <div class="popup-inputs popup-input-up">
+         <div class="name__field"><input name="first_name"  required type="text" placeholder="Ad"><span class="bg__border" ></span><span class="bg__border" ></span><span class="bg__border" ></span><span class="bg__border" ></span></div><div class="surname__field"><input required name="last_name" type="text" placeholder="Soyad"><span class="bg__border" ></span><span class="bg__border" ></span><span class="bg__border" ></span><span class="bg__border" ></span></div>
+     </div> 
+     <div class="popup-inputs popup-input-down" style="margin-top:20px">
+        <div class="email__field"><input name="email"  required type="email" placeholder="Email"><span class="bg__border" ></span><span class="bg__border" ></span><span class="bg__border" ></span><span class="bg__border" ></span></div><div class="number__field"><input  required type="tel" name="phone_number" placeholder="Telefon"><span class="bg__border" ></span><span class="bg__border" ></span><span class="bg__border" ></span><span class="bg__border" ></span></div>
+         <div class="label"><img src="{% static 'assets/img/icons/icon.svg' %}" alt="icon">text@example.com</div>
+     </div>
+     <div class="dropdown">
+      <div class="select">
+        <span class="label">Proqramı seçin</span>
+        <img src="../assets/img/icons/Vectordown.svg" alt="">
       </div>
-      <div class="popup-inputs popup-input-down">
-        <div class="email__field"><input required type="email" placeholder="Email"><span class="bg__border"></span><span
-            class="bg__border"></span><span class="bg__border"></span><span class="bg__border"></span></div>
-        <div class="number__field"><input required type="tel" placeholder="Telefon"><span
-            class="bg__border"></span><span class="bg__border"></span><span class="bg__border"></span><span
-            class="bg__border"></span></div>
-        <div class="label"><img src="../assets/img/icons/icon.svg" alt="icon">text@example.com</div>
-      </div>
-      <div class="dropdown">
-        <div class="select">
-          <span class="label">Proqramı seçin</span>
-          <img src="../assets/img/icons/Vectordown.svg" alt="">
-        </div>
-        <input type="hidden">
-        <ul class="dropdown-menu">
-          <li>HTML</li>
-          <li>Css</li>
-          <li>Javascript</li>
-          <li>C#</li>
-        </ul>
-      </div>
-      <div class="popup-textarea">
-        <div class="textarea"><textarea required placeholder="Mesajınız" class="popup-input" name="text" cols="30"
-            rows="10"></textarea><span class="bg__border"></span><span class="bg__border"></span><span
-            class="bg__border"></span><span class="bg__border"></span></div>
-      </div>
-      <div class="popup-submit">
-        <input type="submit" value="Göndər">
-      </div>
-    </form>
+      <input class="popup__hiddeninput" name="popup__hiddeninput" type="hidden">
+      <ul class="dropdown-menu">
+          {% dropdown_data as datas %}
+          {% for data in datas %}
+          <li data-id="{{data.id}}">{{data.title}}</li>
+          {% endfor %}
+      </ul>
+    </div>
+     <div class="popup-textarea">
+         <div class="textarea"><textarea name="message" required placeholder="Mesajınız" class="popup-input"  cols="30" rows="10"></textarea><span class="bg__border"></span><span class="bg__border"></span><span class="bg__border"></span><span class="bg__border"></span></div></div>
+     <div class="popup-submit">
+         <input type="submit" value="Göndər">
+     </div>
+  </form>
   </div>
 
   <div class="fixed__footer">
@@ -522,11 +417,11 @@
     <div class="footer__up">
       <div class="footer__up__menu">
         <ul>
-          <li><a href="./about.html">Haqqımızda</a> <span></span> </li>
-          <li><a href="./programs.html">Proqramlar</a> <span></span> </li>
-          <li><a href="./groups.html">Qruplar</a> <span></span> </li>
-          <li><a href="./blog.html">Bloq</a> <span></span> </li>
-          <li><a href="./contact.html">Əlaqə</a> <span></span> </li>
+          <li><a href="{% url 'about' %}">Haqqımızda</a> <span></span> </li>
+          <li><a href="{% url 'programs' %}">Proqramlar</a> <span></span> </li>
+          <li><a href="{% url 'group' %}">Qruplar</a> <span></span> </li>
+          <li><a href="{% url 'blog' %}">Bloq</a> <span></span> </li>
+          <li><a href="{% url 'contact' %}">Əlaqə</a> <span></span> </li>
         </ul>
       </div>
       <div class="footer__up__address">
@@ -538,7 +433,7 @@
     </div>
 
     <div class="footer__down">
-      <a href="./index.html">
+      <a href="{% url 'index' %}">
         <div class="footer__down__logo"><img src="../assets/img/icons/logofooter.svg" alt="#"></div>
       </a>
       <div class="footer__down__text">©2021 - Pragmatech - Bütün hüquqlar qorunur.</div>
@@ -552,11 +447,11 @@
   </footer>
 
 
-  <script src="../assets/vendor/jquery-3.6.0.min.js"></script>
-  <script src="../assets/vendor/slick.min.js"></script>
-  <script src="../assets/vendor/swiper-bundle.min.js"></script>
-  <script src="../assets/js/app.js"></script>
-  <script src="../assets/js/common.js"></script>
+  <script src="{% static 'assets/vendor/jquery-3.6.0.min.js' %}"></script>
+  <script src="{% static 'assets/vendor/slick.min.js' %}"></script>
+  <script src="{% static 'assets/vendor/swiper-bundle.min.js' %}"></script>
+  <script src="{% static 'assets/js/app.js' %}"></script>
+  <script src="{% static 'assets/js/common.js' %}"></script>
 </body>
 
 </html>

@@ -44,6 +44,7 @@ class Group(models.Model):
     active = models.BooleanField()
     education_term_month = models.IntegerField(help_text="Enter value for month")
     education_term_hours = models.IntegerField(help_text="Enter value for hours")
+    is_planned = models.BooleanField(null=True,blank=True)
     week_day = models.CharField(help_text="Enter this group lesson days",max_length=255)
     lesson_time = models.CharField(max_length=255)
 

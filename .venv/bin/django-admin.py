@@ -1,4 +1,4 @@
-#!/home/elmir/Desktop/Pragmatech/pragmatech design/pragmatech/.venv/bin/python3
+#!/home/elmir/Desktop/pragmatechbackend/.venv/bin/python3
 # When the django-admin.py deprecation ends, remove this script.
 import warnings
 

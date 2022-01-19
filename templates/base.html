@@ -31,12 +31,12 @@
 
       <header>
           <nav class="navbar">
-              <a href="./index.html">
+              <a href="{% url 'index' %}">
                   <div class="logo"><img src="{% static 'assets/img/icons/logoblack.svg' %}" alt=""></div>
               </a>
               <div class="menu">
                   <ul>
-                      <li><a href="">Haqqımızda</a> <span></span> </li>
+                      <li><a href="{% url 'about' %}">Haqqımızda</a> <span></span> </li>
                       <li><a href="{% url 'programs' %}">Proqramlar</a> <span></span> </li>
                       <li><a href="{% url 'group' %}">Qruplar</a> <span></span> </li>
                       <li><a href="{% url 'blog' %}">Bloq</a> <span></span> </li>
@@ -78,11 +78,11 @@
           </div>
           <div class="mobile__navbar__menu">
               <ul>
-                  <li><a href="./about.html">Haqqımızda</a> <span></span> </li>
-                  <li><a href="./programs.html">Proqramlar</a> <span></span> </li>
-                  <li><a href="./groups.html">Qruplar</a> <span></span> </li>
-                  <li><a href="./blog.html">Bloq</a> <span></span> </li>
-                  <li><a href="./contact.html">Əlaqə</a> <span></span> </li>
+                <li><a href="{% url 'about' %}">Haqqımızda</a> <span></span> </li>
+                <li><a href="{% url 'programs' %}">Proqramlar</a> <span></span> </li>
+                <li><a href="{% url 'group' %}">Qruplar</a> <span></span> </li>
+                <li><a href="{% url 'blog' %}">Bloq</a> <span></span> </li>
+                <li><a href="{% url 'contact' %}">Əlaqə</a> <span></span> </li>
               </ul>
           </div>
           <a class="btn1" href="#">MÜRACİƏT</a>
@@ -163,11 +163,11 @@
           <div class="footer__up">
               <div class="footer__up__menu">
                   <ul>
-                      <li><a href="./about.html">Haqqımızda</a> <span></span> </li>
-                      <li><a href="./programs.html">Proqramlar</a> <span></span> </li>
-                      <li><a href="./groups.html">Qruplar</a> <span></span> </li>
-                      <li><a href="./blog.html">Bloq</a> <span></span> </li>
-                      <li><a href="./contact.html">Əlaqə</a> <span></span> </li>
+                    <li><a href="{% url 'about' %}">Haqqımızda</a> <span></span> </li>
+                    <li><a href="{% url 'programs' %}">Proqramlar</a> <span></span> </li>
+                    <li><a href="{% url 'group' %}">Qruplar</a> <span></span> </li>
+                    <li><a href="{% url 'blog' %}">Bloq</a> <span></span> </li>
+                    <li><a href="{% url 'contact' %}">Əlaqə</a> <span></span> </li>
                   </ul>
               </div>
               <div class="footer__up__address">
