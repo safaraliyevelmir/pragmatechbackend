@@ -27,7 +27,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = "django-insecure-kf#o=hkk7++md-48o6yek5wz+pbs_7o0==%hcqhp)lfr!9*d&b"
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ['*']
 
@@ -83,7 +83,7 @@ WSGI_APPLICATION = 'pragmatech_backend.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
 
-if DEBUG:
+if DEBUG==True:
     DATABASES = {
         'default': {
             'ENGINE': 'django.db.backends.sqlite3',
@@ -142,7 +142,7 @@ STATIC_URL = '/static/'
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR,'static')
 ]
-STATIC_ROOT = os.path.join(BASE_DIR, "static_root/")
+STATIC_ROOT = os.path.join(BASE_DIR, "static/")
 
 
 MEDIA_URL = '/media/'
