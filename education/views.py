@@ -11,6 +11,7 @@ class ProgramPageView(TemplateView):
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         context["programs"] = Program.objects.all()
+        context["title"] = "Proqramlar"
         return context
 
 
@@ -21,7 +22,9 @@ class ProgramDetailPageView(TemplateView):
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
-        context["program"] = Program.objects.get(pk=self.kwargs.get('pk'))
+        program = Program.objects.get(pk=self.kwargs.get('pk'))
+        context["program"] = program
+        context["title"] = f" Proqram / {program.title}"
         return context
 
 class GroupPageView(TemplateView):
@@ -33,6 +36,7 @@ class GroupPageView(TemplateView):
         context = super().get_context_data(**kwargs)
         context["groups"] = Group.objects.all() 
         context["active_groups"] = Group.objects.filter(active=True).all()
+        context["title"] = "Qruplar"
         return context
     
 class GroupDetailPageView(TemplateView):
@@ -41,7 +45,8 @@ class GroupDetailPageView(TemplateView):
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
-        context["group"] = Group.objects.get(pk=self.kwargs.get('pk'))
-        context["title"] = ""
+        group = Group.objects.get(pk=self.kwargs.get('pk'))
+        context["group"] = group
+        context["title"] = group.title
         return context
     

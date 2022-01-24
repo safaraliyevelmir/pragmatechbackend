@@ -5,8 +5,9 @@ from django.views.generic import TemplateView, CreateView
 from contact.forms import ContactForm
 from django.urls import reverse
 
-from contact.models import ApllyCourse
+from contact.models import ApllyCourse, Question
 from education.models import Program
+
 
 class ContactPageView(TemplateView):
     template_name = "contact.html"
@@ -16,6 +17,7 @@ class ContactPageView(TemplateView):
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         context["form"] = ContactForm 
+        context["title"] = "Əlaqə"
         return context
     
     def post(self, request, *args, **kwargs):
@@ -43,4 +45,17 @@ def applycourse(request):
 
     
 
+def questions(request):
+
+    if request.method == 'POST':
+        first_name = request.POST.get('first_name')
+        last_name = request.POST.get('last_name')
+        email = request.POST.get('email')
+        program = request.POST.get('popup__hiddeninput')
+        
+        program_obj = Program.objects.filter(pk=program).first()
+        Questions.objects.create(name=first_name,surname=last_name,email=email,program=program_obj)
+        
+    redirect_url =  request.META.get('HTTP_REFERER')
+    return redirect(redirect_url)
 

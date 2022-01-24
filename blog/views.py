@@ -16,6 +16,8 @@ class BlogsPageView(ListView):
         context = super().get_context_data(**kwargs)
         context["blog_main"] = Blog.objects.first()
         context["blogs"] = Blog.objects.all()
+        context["title"] = "Bloq"
+
         return context
     
 
@@ -38,8 +40,10 @@ class BlogPageDetailView(TemplateView):
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
-        context["blog"] = Blog.objects.get(pk=self.kwargs.get('pk'))
+        blog = Blog.objects.get(pk=self.kwargs.get('pk'))
+        context["blog"] = blog
         context["blogs"] = Blog.objects.all()
+        context["title"] = f"Bloq / {blog.title}"
         return context
 
 

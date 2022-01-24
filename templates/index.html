@@ -1,5 +1,6 @@
 {% load static %}
 {% load program %}
+
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -51,12 +52,12 @@
         <div class="search-box">
           <form action="{% url 'search' %}" method="POST">
             {% csrf_token %}
-             <input type="text" placeholder="Axtar" name="searched"  class="input">
+            <input type="text" placeholder="Axtar" name="searched" class="input">
             <input type="submit" style="display: none;">
             <div class="btn">
-                <i class="fa fa-search" aria-hidden="true"></i>
+              <i class="fa fa-search" aria-hidden="true"></i>
             </div>
-        </form>
+          </form>
         </div>
       </div>
       <a class="btn1" href="#">MÜRACİƏT</a>
@@ -150,7 +151,8 @@
       <div class="logos__item"><img class="css" src="{% static 'assets/img/style_css_img/css.png' %}" alt="css"></div>
       <div class="logos__item"><img src="{% static 'assets/img/style_css_img/js.svg' %}" alt="javascript"></div>
       <div class="logos__item"><img src="{% static 'assets/img/style_css_img/c.svg' %}" alt="c"></div>
-      <div class="logos__item"><img src="{% static 'assets/img/style_css_img/react.jpg' %}" class="react" alt="react"></div>
+      <div class="logos__item"><img src="{% static 'assets/img/style_css_img/react.jpg' %}" class="react" alt="react">
+      </div>
       <div class="logos__item"><img src="{% static 'assets/img/style_css_img/python.svg' %}" alt="python"></div>
     </div>
   </section>
@@ -181,13 +183,13 @@
 
         {% for group in groups %}
         <div class="active__groups__item"><a href="#">
-          <img src="{{group.image.url}}" alt="#">
-          <h3>{{group.title}}</h3>
-          <p>{{group.education_term_month}} ay / {{group.education_term_hours}} saat</p>
+            <img src="{{group.image.url}}" alt="#">
+            <h3>{{group.title}}</h3>
+            <p>{{group.education_term_month}} ay / {{group.education_term_hours}} saat</p>
 
-        </a></div>
+          </a></div>
         {% endfor %}
-       
+
 
       </div>
     </div>
@@ -216,7 +218,7 @@
           <!-- bu div bos qalacaq -->
         </div>
 
-        {% for group  in planned_groups %}
+        {% for group in planned_groups %}
         <div class="double__main__box__item">
           <img src="{{group.image.url}}" alt="#">
           <h3>Lorem ipsum dolor sit amet,
@@ -231,7 +233,7 @@
         {% endfor %}
 
 
-   
+
 
 
       </div>
@@ -277,7 +279,7 @@
         </div>
         {% for blog in blogs %}
         <div class="box box-big ">
-          <div class="box-img" style="background: url(../assets/img/style_css_img/comp14.svg);"></div>
+          <div class="box-img" style="background: url({{blog.image.url}});"></div>
           <div class="box-text">
             <p class="box-text-p">{{blog.title}}</p>
             <p style="margin-bottom: 6px;">{{blog.author}}</p>
@@ -315,22 +317,28 @@
         eget magna id viverra. Quisque varius elit tempus hendrerit sagittis.</p>
     </div>
     <div class="help__form">
-      <form action="">
+
+      <form action="{% url 'questions' %}" method="POST">
+        {% csrf_token %}
         <div class="form__up">
-          <div class="form__item"><input class="form__name" required placeholder="Ad" type="text"><span
-              class="bg__border"></span><span class="bg__border"></span><span class="bg__border"></span><span
-              class="bg__border"></span></div>
-          <div class="form__item"><input class="form__surname" required placeholder="Soyad" type="text"><span
+          <div class="form__item">
+            <input class="form__name"  name="first_name" required placeholder="Ad" type="text">
+            <span class="bg__border"></span><span class="bg__border"></span><span class="bg__border"></span><span
+              class="bg__border"></span>
+          </div>
+          <div class="form__item">
+            <input class="form__surname" name="last_name" required placeholder="Soyad" type="text">
+            <span
               class="bg__border"></span><span class="bg__border"></span><span class="bg__border"></span><span
               class="bg__border"></span></div>
         </div>
         <div class="form__down">
           <div class="form__item">
-            <input class="form__email" required placeholder="Email" type="email">
+            <input class="form__email" name="email"  required placeholder="Email" type="email">
             <span class="bg__border"></span><span class="bg__border"></span><span class="bg__border"></span><span
               class="bg__border"></span>
           </div>
-          <div class="label"><img src="../assets/img/icons/icon.svg" alt="icon">text@example.com</div>
+          <div class="label"><img src="{% static 'assets/img/icons/icon.svg' %}" alt="icon">text@example.com</div>
 
         </div>
 
@@ -340,9 +348,9 @@
           <div class="select  form__item">
 
             <span class="label">Proqramı seçin</span>
-            <img src="../assets/img/icons/Vectordown.svg" alt="">
+            <img src="{% static 'assets/img/icons/Vectordown.svg' %}" alt="">
           </div>
-          <input type="hidden" name="program">
+          <input class="popup__hiddeninput" name="popup__hiddeninput" type="hidden">
           <ul class="dropdown-menu">
             {% dropdown_data as datas %}
             {% for data in datas %}
@@ -366,38 +374,51 @@
     <form method="post" class="popup" action="{% url 'apply_course' %}">
       {% csrf_token %}
       <div class="header">
-        <a href="./index.html"> <img src="../assets/img/icons/logoblack.svg" alt=""></a>
-        <img class="x__icon" src="../assets/img/icons/x.svg" alt="">
+        <a href="{% url 'index' %}"> <img src="{% static 'assets/img/icons/logoblack.svg' %}" alt=""></a>
+        <img class="x__icon" src="{% static 'assets/img/icons/x.svg' %}" alt="">
       </div>
-     <h1>Bizə yazın</h1>
-     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit</p>
-     
-     <div class="popup-inputs popup-input-up">
-         <div class="name__field"><input name="first_name"  required type="text" placeholder="Ad"><span class="bg__border" ></span><span class="bg__border" ></span><span class="bg__border" ></span><span class="bg__border" ></span></div><div class="surname__field"><input required name="last_name" type="text" placeholder="Soyad"><span class="bg__border" ></span><span class="bg__border" ></span><span class="bg__border" ></span><span class="bg__border" ></span></div>
-     </div> 
-     <div class="popup-inputs popup-input-down" style="margin-top:20px">
-        <div class="email__field"><input name="email"  required type="email" placeholder="Email"><span class="bg__border" ></span><span class="bg__border" ></span><span class="bg__border" ></span><span class="bg__border" ></span></div><div class="number__field"><input  required type="tel" name="phone_number" placeholder="Telefon"><span class="bg__border" ></span><span class="bg__border" ></span><span class="bg__border" ></span><span class="bg__border" ></span></div>
-         <div class="label"><img src="{% static 'assets/img/icons/icon.svg' %}" alt="icon">text@example.com</div>
-     </div>
-     <div class="dropdown">
-      <div class="select">
-        <span class="label">Proqramı seçin</span>
-        <img src="../assets/img/icons/Vectordown.svg" alt="">
+      <h1>Bizə yazın</h1>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit</p>
+
+      <div class="popup-inputs popup-input-up">
+        <div class="name__field"><input name="first_name" required type="text" placeholder="Ad"><span
+            class="bg__border"></span><span class="bg__border"></span><span class="bg__border"></span><span
+            class="bg__border"></span></div>
+        <div class="surname__field"><input required name="last_name" type="text" placeholder="Soyad"><span
+            class="bg__border"></span><span class="bg__border"></span><span class="bg__border"></span><span
+            class="bg__border"></span></div>
       </div>
-      <input class="popup__hiddeninput" name="popup__hiddeninput" type="hidden">
-      <ul class="dropdown-menu">
+      <div class="popup-inputs popup-input-down" style="margin-top:20px">
+        <div class="email__field"><input name="email" required type="email" placeholder="Email"><span
+            class="bg__border"></span><span class="bg__border"></span><span class="bg__border"></span><span
+            class="bg__border"></span></div>
+        <div class="number__field"><input required type="tel" name="phone_number" placeholder="Telefon"><span
+            class="bg__border"></span><span class="bg__border"></span><span class="bg__border"></span><span
+            class="bg__border"></span></div>
+        <div class="label"><img src="{% static 'assets/img/icons/icon.svg' %}" alt="icon">text@example.com</div>
+      </div>
+      <div class="dropdown">
+        <div class="select">
+          <span class="label">Proqramı seçin</span>
+          <img src="{% static 'assets/img/icons/Vectordown.svg' %}" alt="">
+        </div>
+        <input class="popup__hiddeninput" name="popup__hiddeninput" type="hidden">
+        <ul class="dropdown-menu">
           {% dropdown_data as datas %}
           {% for data in datas %}
           <li data-id="{{data.id}}">{{data.title}}</li>
           {% endfor %}
-      </ul>
-    </div>
-     <div class="popup-textarea">
-         <div class="textarea"><textarea name="message" required placeholder="Mesajınız" class="popup-input"  cols="30" rows="10"></textarea><span class="bg__border"></span><span class="bg__border"></span><span class="bg__border"></span><span class="bg__border"></span></div></div>
-     <div class="popup-submit">
-         <input type="submit" value="Göndər">
-     </div>
-  </form>
+        </ul>
+      </div>
+      <div class="popup-textarea">
+        <div class="textarea"><textarea name="message" required placeholder="Mesajınız" class="popup-input" cols="30"
+            rows="10"></textarea><span class="bg__border"></span><span class="bg__border"></span><span
+            class="bg__border"></span><span class="bg__border"></span></div>
+      </div>
+      <div class="popup-submit">
+        <input type="submit" value="Göndər">
+      </div>
+    </form>
   </div>
 
   <div class="fixed__footer">
@@ -434,7 +455,7 @@
 
     <div class="footer__down">
       <a href="{% url 'index' %}">
-        <div class="footer__down__logo"><img src="../assets/img/icons/logofooter.svg" alt="#"></div>
+        <div class="footer__down__logo"><img src="{% static 'assets/img/icons/logofooter.svg' %}" alt="#"></div>
       </a>
       <div class="footer__down__text">©2021 - Pragmatech - Bütün hüquqlar qorunur.</div>
       <div class="footer__down__link">
