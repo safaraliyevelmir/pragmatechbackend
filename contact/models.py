@@ -7,7 +7,7 @@ class Contact(models.Model):
     surname = models.CharField(max_length=255)
     email = models.EmailField()
     phone_number = models.CharField(max_length=255)
-    message = models.TextField()
+    message = models.TextField(blank=True,null=True)
 
     #moderation
     created_at = models.DateTimeField(auto_now_add=True)

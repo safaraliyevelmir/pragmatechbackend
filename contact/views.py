@@ -35,9 +35,9 @@ def applycourse(request):
         email = request.POST.get('email')
         phone_number = request.POST.get('phone_number')
         message = request.POST.get('message')
-        program = request.POST.get('popup__hiddeninput')
-        
-        program_obj = Program.objects.filter(pk=program).first()
+        program = request.POST.get('programs_dp')
+        print(program)
+        program_obj = Program.objects.get(pk=program)
         ApllyCourse.objects.create(name=first_name,surname=last_name,email=email,phone_number=phone_number,message=message,program=program_obj)
         
     redirect_url =  request.META.get('HTTP_REFERER')

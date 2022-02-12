@@ -1,90 +1,332 @@
-{% extends 'base.html' %}
-{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+    <script src="https://kit.fontawesome.com/3113ae62d0.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="../assets/css/blog-post.css">
+    <title>Bloq</title>
+</head>
+<body>
 
-{% block css %}
-<link rel="stylesheet" href="{% static 'assets/css/blog-post.css' %}">
-{% endblock css %}
+  
+    <!-- nav bar start -->
+    <header>
+        <nav class="navbar">
+            <a href=""><div class="logo"><img src="../assets/img/icons/logoblack.svg" alt=""></div></a>
+            <div class="menu">
+                <ul>
+                    <li><a href="./about.html">Haqqımızda</a> <span></span> </li>
+                        <li><a href="./programs.html">Proqramlar</a> <span></span> </li>
+                        <li><a href="./groups.html">Qruplar</a> <span></span> </li>
+                        <li><a href="./blog.html">Bloq</a> <span></span> </li>
+                        <li><a href="./contact.html">Əlaqə</a> <span></span> </li>
+                </ul>
+            </div>  
+            <div class="burger"><img src="../assets/img/icons/burger.svg" alt=""></div>
+            <div class="wrapper">
+              <div class="search-box">
+                 <input type="text" placeholder="Axtar" class="input">
+                 <div class="btn">
+                   <i class="fa fa-search" aria-hidden="true"></i>
+                 </div>
+              </div>
+            </div>
+            <a class="btn1" href="#">MÜRACİƏT</a>
+        </nav>
+    </header>
+    
+      <!-- nav bar end -->
+    
+ <!-- mobile navbar -->
 
-{% block content %}
+ <div class="mobile__navbar">
+    <div class="mobile__navbar__header">
+      <a href="./index.html"> <img src="../assets/img/icons/logoblack.svg" alt=""></a>
+      <img class="x__icon" src="../assets/img/icons/x.svg" alt="">
+    </div>
+    <div class="mobile__navbar__search">
+      <div class="btn">
+        <img src="../assets/img/icons/search.svg" alt="">
+      </div>
+      <input placeholder="Axtarış" type="search">
+    </div>
+    <div class="mobile__navbar__menu">
+      <ul>
+                        <li><a href="./about.html">Haqqımızda</a> <span></span> </li>
+                        <li><a href="./programs.html">Proqramlar</a> <span></span> </li>
+                        <li><a href="./groups.html">Qruplar</a> <span></span> </li>
+                        <li><a href="./blog.html">Bloq</a> <span></span> </li>
+                        <li><a href="./contact.html">Əlaqə</a> <span></span> </li>
+      </ul>
+    </div>
+    <a class="btn1" href="#">MÜRACİƏT</a>
+    <div class="mobile__navbar__links">
+
+      <a href=""><i class="fab fa-facebook-f"></i></a>
+      <a href=""><i class="fab fa-instagram"></i></a> 
+      <a href=""><i class="fab fa-linkedin-in"></i></a> 
+
+    </div>
+
+
+  </div>
+
       <!-- downmenu -->
-
+    
       <section class="downmenu">
         <div class="downmenu__wrapper">
-            <a href="../templates/index.html">
-                <div class="downmenu_wrapper_item">Ana Səhifə</div>
-            </a>
-            <img src="{% static 'assets/img/icons/Vectorright.svg' %}" alt="">
-            <a href="">
-                <div class="downmenu_wrapper_item">{{title}}</div>
-            </a>
-
+            <a href=""><div class="downmenu_wrapper_item">Ana Səhifə</div></a>
+            <img src="../assets/img/icons/Vectorright.svg" alt="">
+            <a href="./blog.html"><div class="downmenu_wrapper_item">Bloq</div></a>
+            <img src="../assets/img/icons/Vectorright.svg" alt="">
+            <a href=""><div class="downmenu_wrapper_item">Bloq-post...</div></a>
+            
         </div>
     </section>
-
+    
     <!-- downmenu end -->
-<!-- blog post start -->
-<div class="head">
-  <div class="blog-post-all">
-    <div class="blog-post-header">
-      <h2>
-        {{blog}}
-      </h2>
-      <p class="blog-post-name">{{blog.title}}</p>
-      <p class="blog-post-time">{{blog.created_at|date:"Y.m.d"}}</p>
-      <div class="blog-logo-all">
-        <a href="#">
-          <div class="share-logo"><i class="fas fa-share-alt"></i></div>
-        </a>
-        <a href="#">
-          <div class="facebook-logo"><i class="fab fa-facebook-f"></i></div>
-        </a>
-        <a href="#">
-          <div class="instagram-logo"><i class="fab fa-instagram"></i></div>
-        </a>
-        <a href="#">
-          <div class="linkedin-logo"><i class="fab fa-linkedin-in"></i></div>
-        </a>
-      </div>
-      <div class="blog-post-img" style="background-image: url({{blog.image.url}});"></div>
-      <div class="blog-post-text">
-        <p>
-          {{blog.content|safe}}
-        </p>
-      </div>
-    </div>
+
+    <!-- blog post start -->
+    <div class="head">
+        <div class="blog-post-all">
+            <div class="blog-post-header">
+                <h2>Sed urna enim, viverra vel porta non, ultricies eu diam. Sed dictum quam faucibus nulla pharetra faucibus.</h2>
+                <p class="blog-post-name">Samir Kərimov</p>
+                <p class="blog-post-time">09.09.2021</p>
+                <div class="blog-logo-all">
+                    <a href="#"><div class="share-logo"><i class="fas fa-share-alt"></i></div></a>
+                    <a href="#"><div class="facebook-logo"><i class="fab fa-facebook-f"></i></div></a>
+                    <a href="#"><div class="instagram-logo"><i class="fab fa-instagram"></i></div></a>
+                    <a href="#"><div class="linkedin-logo"><i class="fab fa-linkedin-in"></i></div></a>
+                </div>
+                <div class="blog-post-img"></div>
+                <div class="blog-post-text">
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                        <br><br>
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur.
+                        <br><br>
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet. <br>
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet. <br>
+                        <br><br>
+                        Praesent congue tincidunt elit, in rutrum justo molestie et. Phasellus vitae tempor sapien. Donec efficitur eu justo ac sagittis. Nam tempor nisi mauris, sed bibendum sem posuere eget. Sed urna enim, viverra vel porta non, ultricies eu diam. Sed dictum quam faucibus nulla pharetra faucibus. Nam eros leo, iaculis vitae pellentesque eu, consectetur ac nibh. Phasellus cursus dui at tellus hendrerit, quis tempor tortor pulvinar. Ut dictum pharetra lorem quis laoreet. Nam ligula massa, porttitor et porta vel, porta a nibh. Suspendisse accumsan, justo quis sollicitudin congue, elit purus ultricies sem, a dapibus massa urna non ligula. Fusce quis quam a eros tempor finibus. Donec scelerisque enim sed libero viverra volutpat. Sed nisi est, feugiat in semper in, facilisis a ipsum. Donec suscipit feugiat rhoncus. Suspendisse mauris metus, eleifend et erat pulvinar, convallis aliquet urna.
+                        <br><br>
+                    </p>
+                </div>
+            </div>
     <!-- blog post end -->
-
+            
     <!-- other blog start -->
-  </div>
-  <div class="other-blog">
-    <div class="other-blog-header">
-      <p>Digər bloqlar</p>
-    </div>
-    <div class="other-blog-line"></div>
-  </div>
-  <!-- other blog end -->
+        </div>
+        <div class="other-blog">
+            <div class="other-blog-header"><p>Digər bloqlar</p></div>
+            <div class="other-blog-line"></div>
+        </div>
+    <!-- other blog end -->
+        
+<!-- blog-box start-->
 
-  <!-- blog-box start-->
+    <div class="blog-box">
+        <div class="box">
+            <div class="box-img" style="background:url(../assets/img/bloq-post_css_img/box.svg)"></div>
+            <div class="box-text">
+                <p class="box-text-p">Lorem ipsum dolor sit amet, consectetur</p>
+                <p style="margin-bottom: 6px;">Samir Kərimov</p>
+                <p class="box-text-p2">02.09.2021</p>
+                <a href="../templates/blog-post.html" class="buttons">Ətraflı oxu</a>
+            </div>
+        </div>
 
-  <div class="blog-box">
+        <!-- box 2 -->
 
+        <div class="box">
+            <div class="box-img" style="background: url(../assets/img/bloq-post_css_img/box2.svg);"></div>
+            <div class="box-text">
+                <p class="box-text-p">Lorem ipsum dolor sit amet, consectetur</p>
+                <p style="margin-bottom: 6px;">Samir Kərimov</p>
+                <p class="box-text-p2">02.09.2021</p>
+                <a href="../blog-post/blog-post.html" class="buttons">Ətraflı oxu</a>
+            </div>
+        </div>
 
-    {% for blog in blogs %}
+        <!-- box 3 -->
+
+        <div class="box">
+            <div class="box-img" style="background: url(../assets/img/bloq-post_css_img/box3.svg);"></div>
+            <div class="box-text">
+                <p class="box-text-p">Lorem ipsum dolor sit amet, consectetur</p>
+                <p style="margin-bottom: 6px;">Samir Kərimov</p>
+                <p class="box-text-p2">02.09.2021</p>
+                <a href="../blog-post/blog-post.html" class="buttons">Ətraflı oxu</a>
+            </div>
+        </div>
+
+<!-- box 4 -->
+
+     <div class="box">
+            <div class="box-img" style="background: url(../assets/img/bloq-post_css_img/box4.svg);"></div>
+            <div class="box-text">
+                <p class="box-text-p">Lorem ipsum dolor sit amet, consectetur</p>
+                <p style="margin-bottom: 6px;">Samir Kərimov</p>
+                <p class="box-text-p2">02.09.2021</p>
+                <a href="../blog-post/blog-post.html" class="buttons">Ətraflı oxu</a>
+            </div>
+        </div>
+
+<!-- box 5 -->
+
     <div class="box">
-      <div class="box-img" style="background:url({{blog.image.url}})"></div>
-      <div class="box-text">
-        <p class="box-text-p">{{blog.title}}</p>
-        <p style="margin-bottom: 6px;">{{blog.author}}</p>
-        <p class="box-text-p2">{{blog.created_at|date:"d.m.Y"}}</p>
-        <a href="{{blog.get_absolute_url}}" class="buttons">Ətraflı oxu</a>
-      </div>
+            <div class="box-img" style="background: url(../assets/img/bloq-post_css_img/box5.svg);"></div>
+            <div class="box-text">
+                <p class="box-text-p">Lorem ipsum dolor sit amet, consectetur</p>
+                <p style="margin-bottom: 6px;">Samir Kərimov</p>
+                <p class="box-text-p2">02.09.2021</p>
+                <a href="../blog-post/blog-post.html" class="buttons">Ətraflı oxu</a>
+            </div>
+        </div>
+
+<!-- box 6 -->
+
+    <div class="box">
+            <div class="box-img" style="background: url(../assets/img/bloq-post_css_img/box6.svg);"></div>
+            <div class="box-text">
+                <p class="box-text-p">Lorem ipsum dolor sit amet, consectetur</p>
+                <p style="margin-bottom: 6px;">Samir Kərimov</p>
+                <p class="box-text-p2">02.09.2021</p>
+                <a href="../blog-post/blog-post.html" class="buttons">Ətraflı oxu</a>
+            </div>
+        </div>
+
+<!-- box 7 -->
+
+    <div class="box">
+            <div class="box-img" style="background: url(../assets/img/bloq-post_css_img/box7.svg);"></div>
+            <div class="box-text">
+                <p class="box-text-p">Lorem ipsum dolor sit amet, consectetur</p>
+                <p style="margin-bottom: 6px;">Samir Kərimov</p>
+                <p class="box-text-p2">02.09.2021</p>
+                <a href="../blog-post/blog-post.html" class="buttons">Ətraflı oxu</a>
+            </div>
+        </div>
+
+<!-- box 8 -->
+
+    <div class="box">
+            <div class="box-img" style="background: url(../assets/img/bloq-post_css_img/box8.svg);"></div>
+            <div class="box-text">
+                <p class="box-text-p">Lorem ipsum dolor sit amet, consectetur</p>
+                <p style="margin-bottom: 6px;">Samir Kərimov</p>
+                <p class="box-text-p2"> 02.09.2021</p>
+                <a href="../blog-post/blog-post.html" class="buttons">Ətraflı oxu</a>
+            </div>
+        </div>
+
     </div>
-    {% endfor %}
+
+    
+<!-- blog-box end -->
+    </div>
 
 
+ <!-- popup -->
+ <div class="popup__all">
+
+    <form class="popup">
+      <div class="header">
+        <a href="./index.html"> <img src="../assets/img/icons/logoblack.svg" alt=""></a>
+        <img class="x__icon" src="../assets/img/icons/x.svg" alt="">
+      </div>
+      <h1>Bizə yazın</h1>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit</p>
+
+      <div class="popup-inputs popup-input-up">
+        <div class="name__field"><input required type="text" placeholder="Ad"><span class="bg__border"></span><span
+            class="bg__border"></span><span class="bg__border"></span><span class="bg__border"></span></div>
+        <div class="surname__field"><input required type="text" placeholder="Soyad"><span
+            class="bg__border"></span><span class="bg__border"></span><span class="bg__border"></span><span
+            class="bg__border"></span></div>
+      </div>
+      <div class="popup-inputs popup-input-down">
+        <div class="email__field"><input required type="email" placeholder="Email"><span class="bg__border"></span><span
+            class="bg__border"></span><span class="bg__border"></span><span class="bg__border"></span></div>
+        <div class="number__field"><input required type="tel" placeholder="Telefon"><span
+            class="bg__border"></span><span class="bg__border"></span><span class="bg__border"></span><span
+            class="bg__border"></span></div>
+        <div class="label"><img src="../assets/img/icons/icon.svg" alt="icon">text@example.com</div>
+      </div>
+      <div class="select__wrapper">
+        <i class="fas fa-sort-down"></i>
+      <select class="dropdown">
+        <option value="" disabled selected hidden>Proqramı seçin</option>
+        <option value="">HTML</option>
+        <option value="">CSS</option>
+        <option value="">Python</option>
+        <option value="">Csharp</option>
+      </select>
+    </div>
+      <div class="popup-textarea">
+        <div class="textarea"><textarea required placeholder="Mesajınız" class="popup-input" name="text" cols="30"
+            rows="10"></textarea><span class="bg__border"></span><span class="bg__border"></span><span
+            class="bg__border"></span><span class="bg__border"></span></div>
+      </div>
+      <div class="popup-submit">
+        <input type="submit" value="Göndər">
+      </div>
+    </form>
   </div>
+      
+  <div class="fixed__footer">
+    <div class="fixed__footer__iconleft">
+      <a href="https://www.facebook.com/pragmatech.edu.az/"><i class="fab fa-facebook-f"></i></a>
+      <a href="https://instagram.com/pragmatech.edu.az?utm_medium=copy_link"><i class="fab fa-instagram"></i></a> 
+    </div>
+    <a href="#" class="btn1">MÜRACİƏT</a>
+    <div class="fixed__footer__iconright">
+      <a href="https://www.linkedin.com/company/pragmatech-education"><i class="fab fa-linkedin-in"></i></a> 
+     <a href=""><i class="fab fa-whatsapp"></i></a> 
 
-
-  <!-- blog-box end -->
+    </div>
 </div>
-{% endblock content %}
+    <!-- footer -->
+    <footer>
+        <div class="footer__up">
+            <div class="footer__up__menu">
+                <ul>
+                    <li><a href="./about.html">Haqqımızda</a> <span></span> </li>
+                        <li><a href="./programs.html">Proqramlar</a> <span></span> </li>
+                        <li><a href="./groups.html">Qruplar</a> <span></span> </li>
+                        <li><a href="./blog.html">Bloq</a> <span></span> </li>
+                        <li><a href="./contact.html">Əlaqə</a> <span></span> </li>
+                </ul>
+            </div>
+            <div class="footer__up__address">
+                <div class="footer__up__address__item">
+                    <p>Xocalı prospekti 40, AZ1000 Bakı, Azərbaycan</p>
+                    <p>Mobil + 994 (50) 256 08 07</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer__down">
+            <a href="./index.html">
+                <div class="footer__down__logo"><img src="../assets/img/icons/logofooter.svg" alt=""></div>
+            </a>
+            <div class="footer__down__text">©2021 - Pragmatech - Bütün hüquqlar qorunur.</div>
+            <div class="footer__down__link">
+                <a href="https://www.facebook.com/pragmatech.edu.az/"><i class="fab fa-facebook-f"></i></a>
+                <a href="https://instagram.com/pragmatech.edu.az?utm_medium=copy_link"><i class="fab fa-instagram"></i></a>
+                <a href="https://www.linkedin.com/company/pragmatech-education"><i class="fab fa-linkedin-in"></i></a>
+
+            </div>
+        </div>
+    </footer>
+
+
+  <!-- footer end -->
+  <script src="../assets/vendor/jquery-3.6.0.min.js"></script>
+  <script src="../assets/js/common.js"></script>
+  <script src="../assets/js/main.js"></script>
+</body>
+</html>

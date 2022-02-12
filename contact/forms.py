@@ -10,9 +10,9 @@ class ContactForm(forms.ModelForm):
 
 
         widgets = {
-            'name':forms.TextInput(attrs={'placeholder':'Ad'}),
-            'surname':forms.TextInput(attrs={'placeholder':'Soyad'}),
-            'email':forms.EmailInput(attrs={'placeholder':'Email'}),
+            'name':forms.TextInput(attrs={'placeholder':'Ad',"class":"form__name"}),
+            'surname':forms.TextInput(attrs={'placeholder':'Soyad',"class":"form__surname"}),
+            'email':forms.EmailInput(attrs={'placeholder':'Email',"class":"form__email"}),
             'phone_number':forms.TextInput(attrs={'placeholder':'Telefon'}),
             'message':forms.Textarea(attrs={'placeholder':'Mesajınız','class':'textbox-input'}),
         }

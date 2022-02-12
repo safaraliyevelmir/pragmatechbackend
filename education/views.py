@@ -11,7 +11,6 @@ class ProgramPageView(TemplateView):
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         context["programs"] = Program.objects.all()
-        context["title"] = "Proqramlar"
         return context
 
 
@@ -47,6 +46,5 @@ class GroupDetailPageView(TemplateView):
         context = super().get_context_data(**kwargs)
         group = Group.objects.get(pk=self.kwargs.get('pk'))
         context["group"] = group
-        context["title"] = group.title
         return context
     

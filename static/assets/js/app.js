@@ -67,12 +67,12 @@ let form__name = document.querySelector(".form__name")
 let form__surname = document.querySelector(".form__surname")
 let form__email = document.querySelector(".form__email")
 let dropdown = document.querySelector(".dropdown")
+let phone = document.querySelector(".dropdown > input")
 let bg__border= document.querySelectorAll(".bg__border")
 let name__bg__border = document.querySelectorAll(".form__up .form__item:nth-child(1) > .bg__border")
 let surname__bg__border = document.querySelectorAll(".form__up .form__item:nth-child(2) > .bg__border")
 let email__bg__border = document.querySelectorAll(".form__down .form__item > .bg__border")
-let dropdown__menu__li = document.querySelectorAll(".dropdown-menu li")
-let help__label = document.querySelector(".dropdown .label")
+let phone__bg__border = document.querySelectorAll(".dropdown > .bg__border ")
 let help__submit = document.querySelector(".help .submit")
 
   form__item[0].addEventListener('focusout', function(){
@@ -236,39 +236,62 @@ let help__submit = document.querySelector(".help .submit")
 
   })
 
+// phone
+dropdown.addEventListener('focusout', function(){
+  dropdown.style.border="none"
+  if (phone.checkValidity()==true){
+    for(let borderindex=0; borderindex<4;borderindex++){
+    phone__bg__border[borderindex].style.backgroundColor="#41E063";
+    phone__bg__border[borderindex].classList.add(`bg__border__animation_${borderindex + 1}`);
+  }}
+  else{
+    for(let borderindex=0; borderindex<4;borderindex++){
+    phone__bg__border[borderindex].style.backgroundColor="red"
+      phone__bg__border[borderindex].classList.add(`bg__border__animation_${borderindex + 1}`);
+  }}
 
-// //  submit-------------
+  dropdown.addEventListener("focus",()=>{
 
-help__submit.addEventListener("click",(e)=>{
-  
-        
+    
+    if(phone.checkValidity()==true){
       
-      if(help__label.innerHTML == "Proqramı seçin"){
+      for(let borderindex=0; borderindex<4;borderindex++){
         
-        help__submit.setAttribute("disabled", true);
-        document.querySelector(".dropdown").style.backgroundColor="#f2dede";
-        help__label.style.color="#af504e";
-        removeblock()
+        phone__bg__border[borderindex].style.backgroundColor="#41E063";
+        phone__bg__border[borderindex].classList.add(`bg__border__animation_${borderindex + 1}`);
+        
       }
       
-       
-       function removeblock(){if(help__submit.hasAttribute("disabled")){
-        setTimeout(() => {
-        help__submit.removeAttribute("disabled");
-        
-    }, 100);}}
-
-   
-    
-   
-   
-});
-document.querySelector(".dropdown").addEventListener("focus",()=>{
-  
-    document.querySelector(".dropdown").style.backgroundColor="white";
-    help__label.style.color="#C4C4C4";
-  
+    }
+    else{
+      for(let borderindex=0; borderindex<4;borderindex++){
+      phone__bg__border[borderindex].style.backgroundColor="red";
+      phone__bg__border[borderindex].classList.add(`bg__border__animation_${borderindex + 1}`);}
+    }
 })
+
+
+  
+}); 
+
+dropdown.addEventListener("input",()=>{
+  dropdown.style.border="none"
+        if(phone.checkValidity()==true){
+          for(let borderindex=0; borderindex<4;borderindex++){
+            phone__bg__border[borderindex].style.backgroundColor="#41E063"
+            phone__bg__border[borderindex].classList.add(`bg__border__animation_${borderindex + 1}`);
+            
+          }
+        }
+        else{
+          for(let borderindex=0; borderindex<4;borderindex++){
+          phone__bg__border[borderindex].classList.remove(`bg__border__animation_${borderindex + 1}`)
+         
+          
+        }}
+
+})
+
 
 // form__help__finished
 

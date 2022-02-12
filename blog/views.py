@@ -16,7 +16,7 @@ class BlogsPageView(ListView):
         context = super().get_context_data(**kwargs)
         context["blog_main"] = Blog.objects.first()
         context["blogs"] = Blog.objects.all()
-        context["title"] = "Bloq"
+
 
         return context
     

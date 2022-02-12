@@ -8,11 +8,10 @@ class Program(models.Model):
 
     title = models.CharField(max_length=255)
     slug = models.SlugField(help_text="you can leave this cell blank will automatically create a slug",null=True,blank=True)
+    desc = models.TextField()
     date = models.DateTimeField()
     image = models.ImageField(upload_to='programs/')
     information = RichTextField()
-    requirements = RichTextField()
-    resaults = RichTextField()
 
     #moderation 
     created_at = models.DateTimeField(auto_now_add=True)
@@ -38,15 +37,17 @@ class Program(models.Model):
 class Group(models.Model):
 
     title = models.CharField(max_length=255)
+    content = RichTextField()
     programs = models.ForeignKey(Program,on_delete=models.CASCADE)
-    date = models.DateTimeField()
     image = models.ImageField(upload_to='groups/')
     active = models.BooleanField()
     education_term_month = models.IntegerField(help_text="Enter value for month")
     education_term_hours = models.IntegerField(help_text="Enter value for hours")
-    is_planned = models.BooleanField(null=True,blank=True)
     week_day = models.CharField(help_text="Enter this group lesson days",max_length=255)
     lesson_time = models.CharField(max_length=255)
+    deadline= models.CharField(max_length=255)
+    lesson_start_time = models.CharField(max_length=255)
+    
 
     #moderation 
     created_at = models.DateTimeField(auto_now_add=True)
