@@ -99,9 +99,9 @@ else:
     DATABASES = {
         'default': {
             'ENGINE': 'django.db.backends.postgresql_psycopg2',
-            'NAME': 'pragmatech',
+            'NAME': 'pragmatech_web',
             'USER': 'elmir',
-            'PASSWORD': 'elmir2003',
+            'PASSWORD': '1232003elmir2003',
             'HOST': 'localhost',
             'PORT': '',
         }
