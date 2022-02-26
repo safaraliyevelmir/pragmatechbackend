@@ -175,7 +175,7 @@
         </div>
         {% for blog in blogs %}
         <div class="box">
-          <div class="box-img" style="background: url(../assets/img/style_css_img/comp13.svg);"></div>
+          <div class="box-img" style="background: url({{blog.image.url}});"></div>
           <div class="box-text">
             <p class="box-text-p">{{blog.title}}</p>
             <p style="margin-bottom: 6px;">{{blog.author}}</p>
