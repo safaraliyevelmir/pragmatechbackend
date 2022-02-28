@@ -42,7 +42,7 @@ class BlogPageDetailView(TemplateView):
         context = super().get_context_data(**kwargs)
         blog = Blog.objects.get(pk=self.kwargs.get('pk'))
         context["blog"] = blog
-        context["blogs"] = Blog.objects.all()
+        context["blogs"] = Blog.objects.all()[:10]
         context["title"] = f"Bloq / {blog.title}"
         return context
 
