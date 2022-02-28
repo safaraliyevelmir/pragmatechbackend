@@ -14,7 +14,7 @@ class Blog(models.Model):
     image = models.ImageField(upload_to='blog/')
     slug = models.SlugField(null=True,blank=True)
     content = RichTextField()
-    main_page_post = models.BooleanField()
+
 
 
     #moderation 
