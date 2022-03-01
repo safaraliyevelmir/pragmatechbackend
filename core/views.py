@@ -24,7 +24,6 @@ class MainPageView(TemplateView):
         context["active_groups"] = Group.objects.filter(active=True).all()[:7]
         context["programs"] = Program.objects.all()
         context["blogs"] = Blog.objects.all()[:4]
-        context["main_blog"] = Blog.objects.filter(main_page_post=True).first()
         context['form'] = ContactForm()
         context["slider"] = Slider.objects.all()
         return context
