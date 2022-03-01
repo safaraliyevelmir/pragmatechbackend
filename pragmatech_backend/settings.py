@@ -101,7 +101,7 @@ else:
             'ENGINE': 'django.db.backends.postgresql_psycopg2',
             'NAME': 'pragmatech',
             'USER': 'elmir',
-            'PASSWORD': '1232003elmir2003',
+            'PASSWORD': 'elmir2003',
             'HOST': 'localhost',
             'PORT': '',
         }
