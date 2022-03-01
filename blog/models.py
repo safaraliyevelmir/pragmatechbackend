@@ -38,6 +38,3 @@ class Blog(models.Model):
 
         super().save(*args,**kwargs)
 
-
-class NewBlog(models.Model):
-    title = models.CharField(max_length=255)
