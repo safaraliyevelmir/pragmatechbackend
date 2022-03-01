@@ -37,4 +37,7 @@ class Blog(models.Model):
             self.slug = gen_slug(self.title)
 
         super().save(*args,**kwargs)
-    
+
+
+class NewBlog(models.Model):
+    title = models.CharField(max_length=255)
