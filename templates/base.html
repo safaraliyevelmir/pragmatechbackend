@@ -204,14 +204,15 @@
   </footer>
 
 
+  {% block js %}
+    
+  {% endblock js %}
+  
   <script src="{% static 'assets/vendor/jquery-3.6.0.min.js' %}"></script>
  
   <script src="{% static 'assets/js/app.js' %}"></script>
   <script src="{% static 'assets/js/common.js' %}"></script>
 
-  {% block js %}
-    
-  {% endblock js %}
 </body>
 
 </html>

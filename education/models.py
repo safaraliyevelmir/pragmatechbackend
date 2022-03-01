@@ -9,7 +9,6 @@ class Program(models.Model):
     title = models.CharField(max_length=255)
     slug = models.SlugField(help_text="you can leave this cell blank will automatically create a slug",null=True,blank=True)
     desc = models.TextField()
-    date = models.DateTimeField()
     image = models.ImageField(upload_to='programs/')
     information = RichTextField()
 
