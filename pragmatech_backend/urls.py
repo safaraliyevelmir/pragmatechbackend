@@ -7,7 +7,7 @@ from django.conf.urls.static import static
 from contact.views import ContactPageView, applycourse, questions
 
 urlpatterns = [
-  #  path('admin/', admin.site.urls),
+    path('admin/', admin.site.urls),
     path("", include('core.urls')),
     path('contact/',ContactPageView.as_view(),name='contact'),
     path('blog/',include('blog.urls')),
