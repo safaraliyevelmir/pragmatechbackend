@@ -44,8 +44,8 @@ class Group(models.Model):
     education_term_hours = models.IntegerField(help_text="Enter value for hours")
     week_day = models.CharField(help_text="Enter this group lesson days",max_length=255)
     lesson_time = models.CharField(max_length=255)
-    deadline= models.CharField(max_length=255)
-    lesson_start_time = models.CharField(max_length=255)
+    deadline= models.DateField()
+    lesson_start_time = models.DateField()
     
 
     #moderation 

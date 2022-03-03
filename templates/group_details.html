@@ -14,16 +14,16 @@
     <!-- downmenu -->
     <section class="downmenu">
         <div class="downmenu__wrapper">
-            <a href="./index.html">
+            <a href="{% url 'index' %}">
                 <div class="downmenu__wrapper__item">Ana Səhifə</div>
             </a>
-            <img src="../assets/img/icons/Vectorright.svg" alt="">
-            <a href="./groups.html">
+            <img src="{% static 'assets/img/icons/Vectorright.svg' %}" alt="">
+            <a href="{% url 'group' %}">
                 <div class="downmenu__wrapper__item">Qruplar</div>
             </a>
-            <img src="../assets/img/icons/Vectorright.svg" alt="">
-            <a href="./group_details.html">
-                <div class="downmenu__wrapper__item">Qrup detalları</div>
+            <img src="{% static 'assets/img/icons/Vectorright.svg' %}" alt="">
+            <a href="{{group.get_absolute_url}}">
+                <div class="downmenu__wrapper__item">{{group.title}}</div>
             </a>
 
         </div>
@@ -41,10 +41,10 @@
                 <p>{{group.week_day}} | {{group.lesson_time}}</p>
             </div>
             <div class="time"><i class="fas fa-stopwatch"></i>
-                <p>Son qeydiyyat tarixi:  {{groupdeadline}}</p>
+                <p>Son qeydiyyat tarixi:  {{group.deadline|date:"m.d.y"}}</p>
             </div>
             <div class="time timestart"><i class="fas fa-book-open"></i>
-                <p>Dərsin başlama tarixi:  {{group.lesson_start_time}} </p>
+                <p>Dərsin başlama tarixi:  {{group.lesson_start_time|date:"m.d.y"}} </p>
             </div>
         </div>
             <div class="group__title__content__img"><img src="{{group.image.url}}" alt="#"></div>
