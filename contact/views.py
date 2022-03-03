@@ -5,7 +5,7 @@ from django.views.generic import TemplateView, CreateView
 from contact.forms import ContactForm
 from django.urls import reverse
 
-from contact.models import ApllyCourse, Question
+from contact.models import ApllyCourse
 from education.models import Program
 
 

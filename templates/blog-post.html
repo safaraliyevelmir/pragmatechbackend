@@ -1,5 +1,6 @@
 {% extends 'base.html' %}
 {% load static %}
+
 {% block css %}
 <link rel="stylesheet" href="{% static 'assets/css/blog-post.css' %}">
 
@@ -16,8 +17,8 @@
         <a href="{% url 'index' %}"><div class="downmenu_wrapper_item">Ana Səhifə</div></a>
         <img src="{% static 'assets/img/icons/Vectorright.svg' %}" alt="">
         <a href="{% url 'blog' %}"><div class="downmenu_wrapper_item">Bloq</div></a>
-        <img src="../assets/img/icons/Vectorright.svg" alt="">
-        <a href=""><div class="downmenu_wrapper_item">Bloq-post...</div></a>
+        <img src="{% static 'assets/img/icons/Vectorright.svg' %}" alt="">
+        <a href=""><div class="downmenu_wrapper_item">{{blog.title}}</div></a>
         
     </div>
 </section>
@@ -33,9 +34,9 @@
             <p class="blog-post-time">{{blog.created_at|date:"m.d.y"}}</p>
             <div class="blog-logo-all">
                 <a href="#"><div class="share-logo"><i class="fas fa-share-alt"></i></div></a>
-                <a href="#"><div class="facebook-logo"><i class="fab fa-facebook-f"></i></div></a>
+                <a href="https://www.facebook.com/sharer/sharer.php?u=http://pragmatech.edu.az{{ request.path }}"><div class="facebook-logo"><i class="fab fa-facebook-f"></i></div></a>
                 <a href="#"><div class="instagram-logo"><i class="fab fa-instagram"></i></div></a>
-                <a href="#"><div class="linkedin-logo"><i class="fab fa-linkedin-in"></i></div></a>
+                <a href="http://www.linkedin.com/shareArticle?mini=true&url=pragmatech.edu.az{{request.path}}"><div class="linkedin-logo"><i class="fab fa-linkedin-in"></i></div></a>
             </div>
             <div class="blog-post-img" style="background-image:url('{{blog.image.url}}')"></div>
             <div class="blog-post-text">
