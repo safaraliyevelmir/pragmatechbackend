@@ -18,7 +18,7 @@ class AboutTimeLine(models.Model):
 class Slider(models.Model):
     title = models.CharField(max_length=255)
     text = models.TextField()
-    image = models.ImageField(upload_to='slider/')
+    image = models.ImageField(upload_to='slider/',null=True,blank=True)
     
     
     def __str__(self):
