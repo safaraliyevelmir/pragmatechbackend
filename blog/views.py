@@ -15,7 +15,7 @@ class BlogsPageView(ListView):
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         context["blog_main"] = Blog.objects.first()
-        context["blogs"] = Blog.objects.all()
+        context["blogs"] = Blog.objects.all()[1:]
 
 
         return context
