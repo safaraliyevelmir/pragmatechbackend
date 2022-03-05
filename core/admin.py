@@ -1,6 +1,6 @@
 from django.contrib import admin
 
-from .models import AboutTimeLine, Slider
+from .models import AboutTimeLine, Slider, AboutPageContent
 
 
 class AboutTimeLineAdmin(admin.ModelAdmin):
@@ -10,3 +10,4 @@ class AboutTimeLineAdmin(admin.ModelAdmin):
 
 admin.site.register(AboutTimeLine,AboutTimeLineAdmin)
 admin.site.register(Slider)
+admin.site.register(AboutPageContent)

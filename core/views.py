@@ -1,7 +1,7 @@
 from django.shortcuts import render, redirect
 from django.views.generic import TemplateView
 
-from core.models import AboutTimeLine, Slider
+from core.models import AboutTimeLine, Slider, AboutPageContent
 from contact.forms import ContactForm
 
 from education.models import Group, Program
@@ -36,5 +36,6 @@ class AboutPageView(TemplateView):
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         context["about_objects"] = AboutTimeLine.objects.all()
+        context["about"] = AboutPageContent.objects.first()
         return context
 
