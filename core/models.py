@@ -7,7 +7,13 @@ class AboutPageContent(models.Model):
     def __str__(self):
         return f"About page {self.pk}"
     
+class ProgramPageContent(models.Model):
+    content = models.TextField()
+    image = models.ImageField(upload_to="about/")
     
+    def __str__(self):
+        return f"Program page {self.pk}"
+      
 class AboutTimeLine(models.Model):
 
     title = models.CharField(max_length=255)
