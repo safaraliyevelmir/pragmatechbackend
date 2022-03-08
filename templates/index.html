@@ -82,10 +82,10 @@
 
         {% for x in active_groups %}
         <div class="active__groups__item">
-          <div class="double__main__box__item__title">Foundation</div>
+          <div class="double__main__box__item__title">{{x.programs.title}}</div>
           <a href="{{x.get_absolute_url}}">
             <img src="{{x.image.url}}" alt="#">
-            <h3>Lorem ipsum dolor sit</h3>
+            <h3>{{x.title}}</h3>
             <p><i class="fas fa-hourglass-start"></i>{{x.education_term_month}} ay / {{x.education_term_hours}} saat</p>
 
 

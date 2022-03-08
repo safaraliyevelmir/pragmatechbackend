@@ -27,7 +27,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = "django-insecure-kf#o=hkk7++md-48o6yek5wz+pbs_7o0==%hcqhp)lfr!9*d&b"
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False   
+DEBUG = True   
 
 ALLOWED_HOSTS = ['*']
 
@@ -99,7 +99,7 @@ else:
     DATABASES = {
         'default': {
             'ENGINE': 'django.db.backends.postgresql_psycopg2',
-            'NAME': 'pragmatech',
+            'NAME': ' pragmatech',
             'USER': 'elmir',
             'PASSWORD': 'elmir2003',
             'HOST': 'localhost',
