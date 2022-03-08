@@ -12,7 +12,7 @@ class ProgramPageView(TemplateView):
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         context["programs"] = Program.objects.all()
-        conrext["program_content"] = ProgramPageContent.objects.first()
+        context["program_content"] = ProgramPageContent.objects.first()
         return context
 
 
