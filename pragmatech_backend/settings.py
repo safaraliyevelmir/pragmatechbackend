@@ -88,24 +88,26 @@ WSGI_APPLICATION = 'pragmatech_backend.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
 
+
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': BASE_DIR / 'db.sqlite3',
+    }
+}
 if DEBUG==True:
-    DATABASES = {
-        'default': {
-            'ENGINE': 'django.db.backends.sqlite3',
-            'NAME': BASE_DIR / 'db.sqlite3',
-        }
-    }
+    pass
 else:
-    DATABASES = {
-        'default': {
-            'ENGINE': 'django.db.backends.postgresql_psycopg2',
-            'NAME': ' pragmatech',
-            'USER': 'elmir',
-            'PASSWORD': 'elmir2003',
-            'HOST': 'localhost',
-            'PORT': '',
-        }
-    }
+    # DATABASES = {
+    #     'default': {
+    #         'ENGINE': 'django.db.backends.postgresql_psycopg2',
+    #         'NAME': ' pragmatech',
+    #         'USER': 'elmir',
+    #         'PASSWORD': 'elmir2003',
+    #         'HOST': 'localhost',
+    #         'PORT': '',
+    #     }
+    # }
 
 # Password validation
 # https://docs.djangoproject.com/en/3.2/ref/settings/#auth-password-validators
