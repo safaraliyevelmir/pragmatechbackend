@@ -3,7 +3,7 @@ from django.shortcuts import render
 from django.views.generic import TemplateView
 from django.views.generic.detail import *
 from .models import Program, Group
-from core.models import ProgramPageContent
+# from core.models import ProgramPageContent
 
 class ProgramPageView(TemplateView):
     

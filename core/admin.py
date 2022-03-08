@@ -1,6 +1,6 @@
 from django.contrib import admin
 
-from .models import AboutTimeLine, Slider,AboutPageContent, ProgramPageContent
+from .models import AboutTimeLine, Slider
 
 
 class AboutTimeLineAdmin(admin.ModelAdmin):
