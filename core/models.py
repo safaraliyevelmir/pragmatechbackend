@@ -13,7 +13,14 @@ class ProgramPageContent(models.Model):
     
     def __str__(self):
         return f"Program page {self.pk}"
-      
+    
+class GroupPageContent(models.Model):
+    content = models.TextField()
+    image = models.ImageField(upload_to="group/")
+    
+    def __str__(self):
+        return f"Group page {self.pk}"
+     
 class AboutTimeLine(models.Model):
 
     title = models.CharField(max_length=255)
