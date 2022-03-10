@@ -3,7 +3,7 @@ from django.shortcuts import render
 from django.views.generic import TemplateView
 from django.views.generic.detail import *
 from .models import Program, Group
-from core.models import ProgramPageContent
+from core.models import ProgramPageContent, GroupPageContent
 
 class ProgramPageView(TemplateView):
     
@@ -37,6 +37,7 @@ class GroupPageView(TemplateView):
         context = super().get_context_data(**kwargs)
         context["groups"] = Group.objects.all() 
         context["active_groups"] = Group.objects.filter(active=True).all()
+        context["group_page_content"] = GroupPageContent.objects.first()
         context["title"] = "Qruplar"
         return context
     

@@ -32,13 +32,11 @@ Qruplar
                     <div class="groups__left__wrapper__up__stroke"></div>
 
                 </div>
-                <div class="groups__left__wrapper__text">Vivamus pretium, massa ac tempor rhoncus, eros eros hendrerit
-                    orci, in viverra risus mi a dolor. Etiam consequat, metus nec sodales porttitor, magna risus
-                    bibendum dui, semper posuere lectus urna sit amet dui. Phasellus et bibendum eros. </div>
+                <div class="groups__left__wrapper__text">{{group_page_content.content}}</div>
 
             </div>
         </div>
-        <div class="groups__img"><img src="{% static 'assets/img/style_css_img/comp18.svg' %}" alt=""></div>
+        <div class="groups__img"><img src="{{group_page_content.image.url}}" alt=""></div>
     </section>
 
     <!-- tabsection -->
