@@ -25,7 +25,7 @@ class AboutTimeLine(models.Model):
         return self.title
 
     class Meta:
-        ordering = ['-index']
+        ordering = ['index']
         
 
 class Slider(models.Model):
