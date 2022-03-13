@@ -27,7 +27,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = "django-insecure-kf#o=hkk7++md-48o6yek5wz+pbs_7o0==%hcqhp)lfr!9*d&b"
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False   
+DEBUG = True   
 
 ALLOWED_HOSTS = ['*']
 
@@ -90,11 +90,15 @@ WSGI_APPLICATION = 'pragmatech_backend.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
 
-if DEBUG==True:
+if DEBUG:
     DATABASES = {
         'default': {
-            'ENGINE': 'django.db.backends.sqlite3',
-            'NAME': BASE_DIR / 'db.sqlite3',
+            'ENGINE': 'django.db.backends.postgresql_psycopg2',
+            'NAME': ' blog',
+            'USER': 'doadmin',
+            'PASSWORD': '48olzpoOaPiL3GHh',
+            'HOST': 'localhost',
+            'PORT': '',
         }
     }
 else:
