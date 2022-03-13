@@ -97,7 +97,7 @@ if DEBUG:
             'NAME': ' blog',
             'USER': 'doadmin',
             'PASSWORD': '48olzpoOaPiL3GHh',
-            'HOST': 'localhost',
+            'HOST': '143.198.134.45',
             'PORT': '',
         }
     }
