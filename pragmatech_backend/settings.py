@@ -93,12 +93,8 @@ WSGI_APPLICATION = 'pragmatech_backend.wsgi.application'
 if DEBUG:
     DATABASES = {
         'default': {
-            'ENGINE': 'django.db.backends.postgresql_psycopg2',
-            'NAME': ' blog',
-            'USER': 'doadmin',
-            'PASSWORD': '48olzpoOaPiL3GHh',
-            'HOST': '143.198.134.45',
-            'PORT': '',
+            'ENGINE': 'django.db.backends.sqlite3',
+            'NAME': BASE_DIR / 'db.sqlite3',
         }
     }
 else:
